@@ -2,7 +2,7 @@
 	$this_page='duty_details';
 include '../../includes/check.php';
 
-	include_once  'open_db.php';
+	include_once  '../../includes/open_db.h';
 	$result=mysql_query("select * from duty_location") or die(mysql_error());
 
 	if(!empty($_POST))
@@ -34,7 +34,7 @@ include '../../includes/check.php';
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
 		<title>Duty Detail</title>
 		
 		<style type="text/css">
@@ -89,7 +89,7 @@ include '../../includes/check.php';
 		</head>
 		<body>
 			<div>
-				<?php include_once 'menu.php';?>
+				<?php include_once '../../includes/menu.php';?>
 				<br /> <br /> <br /> <br />
 			</div>
 			<div id="form1" style="width:40em; height:20em;" >
@@ -185,7 +185,7 @@ include '../../includes/check.php';
 									</tr>
 									<tr>
 										<td colspan="3">
-											<a href="duty_point_search.php"><img src="img/search.png" class="s_button" width=30 height=30/> </a> 
+											<a href="duty_point_search.php"><img src="../../img/search.png" class="s_button" width=30 height=30/> </a> 
 											<input id="Save" type='submit' name='Save' value='Save' /> 
 											<input id="Clear" type='reset' name='Clear' value='Clear' />
 										</td>

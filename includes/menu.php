@@ -12,7 +12,7 @@
     <body>
 <ul id="nav">
     <li <?php echo ($this_page=='home') ? 'class="current"' : '' ; ?> >
-        <a href="home.php">Home</a>
+        <a href="../../home">Home</a>
     </li>
     <li <?php echo ($this_page=='duty_details') ? 'class="current"' : '' ; ?> >
         <a href="#">Duty Details</a>
@@ -21,10 +21,10 @@
                 <a href="#">Duty Locations</a>
                 <ul>
                     <li >
-                        <a href="duty_location_new.php">New</a>
+                        <a href="../duty_details/duty_location_new">New</a>
                     </li>
                     <li>
-                        <a href="duty_location_view.php">View</a>
+                        <a href="../duty_detailsduty_location_view">View</a>
                     </li>
                 </ul>
             </li>

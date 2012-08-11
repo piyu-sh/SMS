@@ -3,7 +3,7 @@ include '../../includes/check.php';
 
 if(!empty($_POST))
 {
-	include 'open_db.php';
+	include '../../includes/open_db.h';
 	$loc_code=$_POST["loc_code"];
 	$loc_description=$_POST["loc_description"];
 	$loc_remarks=$_POST["loc_remarks"];
@@ -18,7 +18,7 @@ if(!empty($_POST))
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html" charset=utf-8 " />
-		<link rel="stylesheet" type="text/css" href="style.css" />	
+		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />	
 		<title>Duty Detail</title>	
 		
 		<script type="text/javascript">
@@ -37,7 +37,7 @@ if(!empty($_POST))
 
 	<body>
 		<div>
-			<?php include_once 'menu.php';?>
+			<?php include_once '../../includes/menu.php';?>
 			<br /><br /><br /><br />
 		</div>
 		<div id="form1" style="width:32em; height:20em;" >
@@ -67,7 +67,7 @@ if(!empty($_POST))
 								</tr>
 								<tr>
 									<td colspan="2">
-										<a href="duty_area_search.php"><img class="s_button" src="img/search.png" alt="Search" width="30" height="30" /></a>
+										<a href="duty_area_search.php"><img class="s_button" src="../../img/search.png" alt="Search" width="30" height="30" /></a>
 										<input type='submit' name='Save' value='Save' /> 
 										<input type='reset' name='Clear' value='Clear' />
 									</td>

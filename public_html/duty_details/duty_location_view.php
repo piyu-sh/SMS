@@ -2,7 +2,7 @@
 	$this_page='duty_details';
 include '../../includes/check.php';
 
-	include 'open_db.php';
+	include '../../includes/open_db.h';
 	if(!empty($_POST))
 	{
 		$query1="select * from duty_location";
@@ -28,7 +28,7 @@ include '../../includes/check.php';
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html" charset=utf-8 " />
-		<link rel="stylesheet" type="text/css" href="view.css" />
+		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
 		<title>Duty Detail</title>
 		
 		<script type="text/javascript">
@@ -59,7 +59,7 @@ include '../../includes/check.php';
 
 	<body>
 		<div>
-			<?php include_once 'menu.php';?>
+			<?php include_once '../../includes/menu.php';?>
 			<br><br><br><br>
 		</div>
 		<div id="form1" style="width:60em;">
@@ -75,10 +75,10 @@ include '../../includes/check.php';
 									<b>Duty Location Details</b>
 								</tr>
 								<tr>
-									<th width="30"><input class='s_button' type='image' src='img/delete.png' alt='Delete' /></th>
+									<th width="30"><input class='s_button' type='image' src='../../img/delete.png' alt='Delete' /></th>
 									<th width="400">Loc Code</th>
 									<th width="400">Location Description</th>
-									<th width="30"><a href="duty_location_new.php"> <img class="s_button" src="img/add.png" width="30" height="30"></a></th>
+									<th width="30"><a href="duty_location_new.php"> <img class="s_button" src="../../img/add.png" width="30" height="30"></a></th>
 								</tr>
 								<?php 
 									while ($row = mysql_fetch_array($result))
@@ -87,7 +87,7 @@ include '../../includes/check.php';
 										echo "<td><input type='checkbox' name=$row[loc_id] /></td>";
 										echo "<td id=$row[loc_id]c >$row[loc_code]</td>";
 										echo "<td id=$row[loc_id]d >$row[loc_description]</td>";
-										echo "<td><a href=\"#\"><img id=$row[loc_id] class='s_button' src='img/edit.png' alt='Edit' width=30 height=30 onclick=\"edit(this.id)\" /></td>";
+										echo "<td><a href=\"#\"><img id=$row[loc_id] class='s_button' src='../../img/edit.png' alt='Edit' width=30 height=30 onclick=\"edit(this.id)\" /></td>";
 										echo "</tr>";
 									}
 								?>

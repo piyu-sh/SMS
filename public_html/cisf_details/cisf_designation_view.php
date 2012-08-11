@@ -2,7 +2,7 @@
 	$this_page='cisf_details';
 include '../../includes/check.php';
 
-	include 'open_db.php';
+	include '../../includes/open_db.h';
 	if(!empty($_POST))
 	{
 		$query1="select * from  cisf_designation";
@@ -25,7 +25,7 @@ include '../../includes/check.php';
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="view.css" />
+		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
 		<title>CISF Detail</title>
 		
 		<script type="text/javascript">
@@ -69,10 +69,10 @@ include '../../includes/check.php';
 						<table border="1" cellspacing="2" >
 							<tbody>
 								<tr>
-									<th width="30"><input class='s_button' type='image' src='img/delete.png' alt='Delete' width=30 height=30/></th>
+									<th width="30"><input class='s_button' type='image' src='../../img/delete.png' alt='Delete' width=30 height=30/></th>
 									<th width="400">Designation Code</th>
 									<th width="400">Designation Description</th>
-									<th width="30"><a href="cisf_designation_new.php"> <img class="s_button" src="img/add.png" width=30 height=30></th>
+									<th width="30"><a href="cisf_designation_new.php"> <img class="s_button" src="../../img/add.png" width=30 height=30></th>
 								</tr>
 								<?php 
 									while ($row = mysql_fetch_array($result))
@@ -81,7 +81,7 @@ include '../../includes/check.php';
 										echo "<td><input type='checkbox' name=$row[desig_id] /></td>";
 										echo "<td id=$row[desig_id]c >$row[desig_code]</td>";
 										echo "<td id=$row[desig_id]d >$row[desig_description]</td>";
-										echo "<td><a href=\"#\"><img id=$row[desig_id] class='s_button' src='img/edit.png' alt='Edit' width=30 height=30 onclick=\"edit(this.id)\" /></td>";
+										echo "<td><a href=\"#\"><img id=$row[desig_id] class='s_button' src='../../img/edit.png' alt='Edit' width=30 height=30 onclick=\"edit(this.id)\" /></td>";
 										echo "</tr>";
 									}
 								?>

@@ -8,7 +8,7 @@ include '../../includes/check.php';
 
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="cisf_shifts_view.css" />
+	<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
 	<title>Duty Detail</title>
 	
 	</head>
@@ -28,15 +28,15 @@ include '../../includes/check.php';
 							<tbody>
 								<tr colspan="6">
 								<b>CISF Shifts Details</b>
-								<input type='image' src='img/last.png' alt='Search' />
-								<input type='image' src='img/next.png' alt='Search' />
-								<input type='image' src='img/previous.png' alt='Search' />
-								<input type='image' src='img/first.png' alt='Search' />
-								<input type='image' src='img/refresh.png' alt='Search' />
-								<input type='image' src='img/add.png' alt='Search' />
+								<input type='image' src='../../img/last.png' alt='Search' />
+								<input type='image' src='../../img/next.png' alt='Search' />
+								<input type='image' src='../../img/previous.png' alt='Search' />
+								<input type='image' src='../../img/first.png' alt='Search' />
+								<input type='image' src='../../img/refresh.png' alt='Search' />
+								<input type='image' src='../../img/add.png' alt='Search' />
 								</tr>
 								<tr>
-									<th width="30"><input type='image' src='img/delete.png' alt='Search' /></th>
+									<th width="30"><input type='image' src='../../img/delete.png' alt='Search' /></th>
 									<th width="400">Shift Code</th>
 									<th width="400">Description</th>
 									<th width="400">From Time</th>
@@ -48,70 +48,70 @@ include '../../includes/check.php';
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								<tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								</tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								<tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								</tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								<tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								</tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								<tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								</tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								<tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 							</tbody>
 						</table>
 					</div>

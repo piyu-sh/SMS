@@ -2,7 +2,7 @@
 	$this_page='duty_details';
 include '../../includes/check.php';
 
-	include 'open_db.php';
+	include '../../includes/open_db.h';
 	if(!empty($_POST))
 	{
 		$query1="select * from duty_facilitation";
@@ -25,7 +25,7 @@ include '../../includes/check.php';
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="view.css" />
+		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
 		<title>Duty Detail</title>
 		
 		<script type="text/javascript">
@@ -50,7 +50,7 @@ include '../../includes/check.php';
 	</head>
 	<body>
 		<div>
-			<?php include_once 'menu.php';?>
+			<?php include_once '../../includes/menu.php';?>
 			<br><br><br><br>
 		</div>
 		<div id="form1" style="width:60em;">
@@ -66,11 +66,11 @@ include '../../includes/check.php';
 									<b>Facilitation And Security Details</b>
 								</tr>
 								<tr>
-									<th width="30"><input type='image' class="s_button" src='img/delete.png' alt='Search' /></th>
+									<th width="30"><input type='image' class="s_button" src='../../img/delete.png' alt='Search' /></th>
 									<th width="400">Facility</th>
 									<th width="400">Facility Type</th>
 									<th width="400">Sub Facility Type</th>
-									<th width="30"><a href="facilitation_and_security_new.php" ><img class="s_button" height=30 width=30 src='img/add.png' alt='Search' /></a></th>
+									<th width="30"><a href="facilitation_and_security_new.php" ><img class="s_button" height=30 width=30 src='../../img/add.png' alt='Search' /></a></th>
 								</tr>
 								<?php 
 									while ($row = mysql_fetch_array($result))
@@ -80,7 +80,7 @@ include '../../includes/check.php';
 										echo "<td id=$row[facility_id]f >$row[facility]</td>";
 										echo "<td id=$row[facility_id]t >$row[facility_type]</td>";
 										echo "<td id=$row[facility_id]s >$row[sub_facility_type]</td>";
-										echo "<td><a href=\"#\"><img class='s_button' id=$row[facility_id] src='img/edit.png' alt='edit' width=25 height=25 onclick=\"edit(this.id)\" /></td>";
+										echo "<td><a href=\"#\"><img class='s_button' id=$row[facility_id] src='../../img/edit.png' alt='edit' width=25 height=25 onclick=\"edit(this.id)\" /></td>";
 										echo "</tr>";
 									}
 								?>

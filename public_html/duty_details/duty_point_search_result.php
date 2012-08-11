@@ -7,7 +7,7 @@ include '../../includes/check.php';
 		$loc_desc=$_POST['loc_list'];
 		$area_desc=$_POST['area_list'];
 		$dp_description=explode(" ",$_POST['dp_description']);
-		include_once 'open_db.php';
+		include_once '../../includes/open_db.h';
 		$result=mysql_query("select area_code2 from duty_area where area_description='$area_desc' ") or die(mysql_error());
 		while ($row = mysql_fetch_array($result))
 		{
@@ -28,7 +28,7 @@ include '../../includes/check.php';
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="view.css" />
+		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
 		<title>Duty Detail</title>
 		
 		<script type="text/javascript">
@@ -107,7 +107,7 @@ include '../../includes/check.php';
 
 	<body>
 		<div>
-			<?php include_once 'menu.php';?>
+			<?php include_once '../../includes/menu.php';?>
 			<br /> <br /> <br /> <br />
 		</div>
 		<div id="form1" style="width:60em;" >
@@ -122,12 +122,12 @@ include '../../includes/check.php';
 									<b>Duty Point Details</b>
 								</tr>
 								<tr>
-									<th width="30"><a><img class="s_button" src='img/delete.png' width=30 height=30 alt='Search' onclick="del_row()" /></th>
+									<th width="30"><a><img class="s_button" src='../../img/delete.png' width=30 height=30 alt='Search' onclick="del_row()" /></th>
 									<th width="400">DP Code</th>
 									<th width="400">Duty Point Description</th>
 									<th width="400">No of Shifts</th>
 									<th width="400">Shifts</th>
-									<th width="30"><a href="duty_point_new.php"> <img class="s_button" height=30 width=30 src='img/add.png' alt='Add' /> </a></th>
+									<th width="30"><a href="duty_point_new.php"> <img class="s_button" height=30 width=30 src='../../img/add.png' alt='Add' /> </a></th>
 								</tr>
 								<?php 
 									$i=0;
@@ -139,7 +139,7 @@ include '../../includes/check.php';
 										echo "<td id=$row[dp_id]d >$row[dp_description]</td>";
 										echo "<td id=$row[dp_id]n >$row[no_shifts]</td>";
 										echo "<td id=$row[dp_id]s >$row[shifts]</td>";
-										echo "<td ><a href=\"#\"><img id=$row[dp_id] class=\"s_button\" width=30 height=25 src=\"img/edit.png\" onclick=\"edit(this.id)\" /></a></td>";
+										echo "<td ><a href=\"#\"><img id=$row[dp_id] class=\"s_button\" width=30 height=25 src=\"../../img/edit.png\" onclick=\"edit(this.id)\" /></a></td>";
 										echo "</tr>";
 										$i++;
 									}

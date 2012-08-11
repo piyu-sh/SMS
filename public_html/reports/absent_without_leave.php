@@ -10,7 +10,7 @@ include '../../includes/check.php';
 
     <head>
         <meta http-equiv="Content-Type" content="text/html" charset=utf-8" />
-        <link rel="stylesheet" type="text/css" href="absent_without_leave.css" />
+        <link rel="stylesheet" type="text/css" href="../../styles/style.css" />
         <title>Reports</title>
         
     </head>

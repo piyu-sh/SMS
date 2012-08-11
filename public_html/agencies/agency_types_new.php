@@ -10,7 +10,7 @@ include '../../includes/check.php';
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" type="text/css" href="agency_types_new.css" />
+        <link rel="stylesheet" type="text/css" href="../../styles/style.css" />
         <title>Agencies</title>
         
     </head>
@@ -39,7 +39,7 @@ include '../../includes/check.php';
                                 </tr>
 								<tr>
                                     <td colspan="2">
-									<input type='image' src='img/search.png' alt='Search' />
+									<input type='image' src='../../img/search.png' alt='Search' />
                                     <input id="Save" type='submit' name='Save' value='Save' />
                                     <input id="Clear" type='reset' name='Clear' value='Clear' />
                                     </td>

@@ -4,7 +4,7 @@ include '../../includes/check.php';
 
 	if(!empty($_POST))
 	{
-		include 'open_db.php';
+		include '../../includes/open_db.h';
 		$facility=$_POST["facility"];
 		$facility_type=$_POST["facility_type"];
 		$sub_facility_type=$_POST["sub_facility_type"];
@@ -19,7 +19,7 @@ include '../../includes/check.php';
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="../../styles/style.css" />
         <title>Duty Detail</title>
         
 		<script type="text/javascript">
@@ -36,7 +36,7 @@ include '../../includes/check.php';
     </head>
     <body>
         <div>
-            <?php include_once 'menu.php';?>
+            <?php include_once '../../includes/menu.php';?>
 			<br /><br /><br /><br />
         </div>
         <div id="form1" style="width:45em; height:20em;">
@@ -80,7 +80,7 @@ include '../../includes/check.php';
 								</tr>
 								<tr>
                                     <td colspan="4">
-										<a href="facilitation_and_security_view.php"><img class="s_button" src='img/search.png' alt='Search' width=30 height=30/></a>
+										<a href="facilitation_and_security_view.php"><img class="s_button" src='../../img/search.png' alt='Search' width=30 height=30/></a>
 										<input id="Save" type='submit' name='Save' value='Save' />
 										<input id="Clear" type='reset' name='Clear' value='Clear' />
                                     </td>

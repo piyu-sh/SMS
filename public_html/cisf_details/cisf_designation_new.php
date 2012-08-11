@@ -4,7 +4,7 @@ include '../../includes/check.php';
 
 	if(!empty($_POST))
 	{
-		include 'open_db.php';
+		include '../../includes/open_db.h';
 		$desig_code=$_POST["desig_code"];
 		$desig_description=$_POST["desig_description"];
 		$query="insert into cisf_designation(`desig_code`,`desig_description`) values('$desig_code','$desig_description')";
@@ -20,7 +20,7 @@ include '../../includes/check.php';
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="../../styles/style.css" />
         <title>CISF Detail</title>
         
 		<script type="text/javascript">
@@ -63,7 +63,7 @@ include '../../includes/check.php';
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-									<a href="cisf_designation_view.php"><img class="s_button" src="img/search.png" alt="Search" width="30" height="30" /> </a>
+									<a href="cisf_designation_view.php"><img class="s_button" src="../../img/search.png" alt="Search" width="30" height="30" /> </a>
                                     <input id="Save" type='submit' name='Save' value='Save' />
                                     <input id="Clear" type='reset' name='Clear' value='Clear' />
                                     </td>

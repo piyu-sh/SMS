@@ -10,7 +10,7 @@ include 'check.php';?>
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" type="text/css" href="duty_deployment_chart.css" />
+        <link rel="stylesheet" type="text/css" href="../../styles/style.css" />
         <title>Reports</title>
         
     </head>

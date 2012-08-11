@@ -8,7 +8,7 @@ include '../../includes/check.php';
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" type="text/css" href="cisf_shift_wise_security_personnel_search.css" />
+        <link rel="stylesheet" type="text/css" href="../../styles/style.css" />
         <title>Cis Detail</title>
         
     </head>
@@ -50,7 +50,7 @@ include '../../includes/check.php';
 								</tr>
 								<tr>
 								    <td colspan="4">
-									<input type='image' src='img/add.png' alt='Search' />
+									<input type='image' src='../../img/add.png' alt='Search' />
                                     <input id="Search" type='submit' name='Search' value='Search' />
                                     <input id="Clear" type='reset' name='Clear' value='Clear' />
                                     </td>

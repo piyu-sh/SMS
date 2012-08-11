@@ -2,7 +2,7 @@
 	$this_page='cisf_details';
 include '../../includes/check.php';
 
-	include_once  'open_db.php';
+	include_once  '../../includes/open_db.h';
 	$result=mysql_query("select * from duty_point") or die(mysql_error());
 	$result1=mysql_query("select * from cisf_designation") or die(mysql_error());
 	
@@ -24,7 +24,7 @@ include '../../includes/check.php';
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="../../styles/style.css" />
         <title>CISF Detail</title>
         
 		<style type="text/css">
@@ -111,7 +111,7 @@ include '../../includes/check.php';
                                 <tr>
                                     <td colspan="2">
 									<br/>
-									<a href="cisf_guards_per_location_search.php"><img src="img/search.png" class="s_button" width=30 height=30/> </a>
+									<a href="cisf_guards_per_location_search.php"><img src="../../img/search.png" class="s_button" width=30 height=30/> </a>
                                     <input id="Save" type='submit' name='Save' value='Save' />
                                     <input id="Clear" type='reset' name='Clear' value='Clear' />
                                     </td>

@@ -11,7 +11,7 @@ include '../../includes/check.php';
 
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="agency_types_view.css" />
+	<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
 	<title>Agencies</title>
 	
 	</head>
@@ -32,68 +32,68 @@ include '../../includes/check.php';
 							<tbody>
 								<tr colspan="4">
 								<b>Agency Type Details</b>
-								<input type='image' src='img/last.png' alt='last' />
-								<input type='image' src='img/next.png' alt='next' />
-								<input type='image' src='img/previous.png' alt='previous' />
-								<input type='image' src='img/first.png' alt='first' />
-								<input type='image' src='img/refresh.png' alt='refresh' />
-								<input type='image' src='img/add.png' alt='add' />
+								<input type='image' src='../../img/last.png' alt='last' />
+								<input type='image' src='../../img/next.png' alt='next' />
+								<input type='image' src='../../img/previous.png' alt='previous' />
+								<input type='image' src='../../img/first.png' alt='first' />
+								<input type='image' src='../../img/refresh.png' alt='refresh' />
+								<input type='image' src='../../img/add.png' alt='add' />
 								</tr>
 								<tr>
-									<th width="30"><input type='image' src='img/delete.png' alt='Delete' /></th>
+									<th width="30"><input type='image' src='../../img/delete.png' alt='Delete' /></th>
 									<th width="400">Code</th>
 									<th width="400">Name</th>
-									<th width="30"><input type='image' src='img/search.png' alt='search' /></th></th>
+									<th width="30"><input type='image' src='../../img/search.png' alt='search' /></th></th>
 								</tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								<tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								</tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								<tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								</tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								<tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								</tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								<tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								</tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 								<tr>
 									<td><input type='checkbox' /></td>
 									<td></td>
 									<td></td>
-									<td><input type='image' src='img/edit.png' alt='Search' /></td>
+									<td><input type='image' src='../../img/edit.png' alt='Search' /></td>
 							</tbody>
 						</table>
 					</div>

@@ -6,7 +6,7 @@ include '../../includes/check.php';
 	{
 		$dp_desc=$_POST['dp_list'];
 		$desig_description=explode(" ",$_POST['desig_list']);
-		include_once 'open_db.php';
+		include_once '../../includes/open_db.h';
 		$query="SELECT * FROM `cisf_gpl` WHERE `dp_description`= '$dp_desc' and (`desig_description` like '%$desig_description[0]%'";
 		foreach ($desig_description as $desc)
 		{
@@ -22,7 +22,7 @@ include '../../includes/check.php';
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="view.css" />
+		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
 		<title>Duty Detail</title>
 		
 		<script type="text/javascript">
@@ -108,12 +108,12 @@ include '../../includes/check.php';
 									<b>Duty Point Details</b>
 								</tr>
 								<tr>
-									<th width="30"><a><img class="s_button" src='img/delete.png' width=30 height=30 alt='Search' onclick="del_row()" /></th>
+									<th width="30"><a><img class="s_button" src='../../img/delete.png' width=30 height=30 alt='Search' onclick="del_row()" /></th>
 									<th width="400">Duty Point</th>
 									<th width="400">Designation</th>
 									<th width="400">No of Persons</th>
 									<th width="400">Remarks</th>
-									<th width="30"><a href="cisf_guards_per_location_new.php"> <img class="s_button" height=30 width=30 src='img/add.png' alt='Add' /> </a></th>
+									<th width="30"><a href="cisf_guards_per_location_new.php"> <img class="s_button" height=30 width=30 src='../../img/add.png' alt='Add' /> </a></th>
 								</tr>
 								<?php 
 									$i=0;
@@ -125,7 +125,7 @@ include '../../includes/check.php';
 										echo "<td id=$row[gpl_id]d >$row[desig_description]</td>";
 										echo "<td id=$row[gpl_id]n >$row[no_of_persons]</td>";
 										echo "<td id=$row[gpl_id]s >$row[gpl_remarks]</td>";
-										echo "<td ><a href=\"#\"><img id=$row[gpl_id] class=\"s_button\" width=30 height=25 src=\"img/edit.png\" onclick=\"edit(this.id)\" /></a></td>";
+										echo "<td ><a href=\"#\"><img id=$row[gpl_id] class=\"s_button\" width=30 height=25 src=\"../../img/edit.png\" onclick=\"edit(this.id)\" /></a></td>";
 										echo "</tr>";
 										$i++;
 									}

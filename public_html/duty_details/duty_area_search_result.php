@@ -6,7 +6,7 @@ include '../../includes/check.php';
 	{
 		$loc_description=$_POST['loc_description'];
 		$area_description=explode(" ",$_POST['area_description']);
-		include_once 'open_db.php';
+		include_once '../../includes/open_db.h';
 		$result=mysql_query("select loc_code from duty_location where loc_description='$loc_description'") or die(mysql_error());
 		while ($row = mysql_fetch_array($result))
 		{
@@ -28,7 +28,7 @@ include '../../includes/check.php';
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="view.css" />
+		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
 		<title>Duty Detail</title>
 		
 		<script type="text/javascript">
@@ -103,7 +103,7 @@ include '../../includes/check.php';
 
 	<body>
 		<div>
-			<?php include_once 'menu.php';?>
+			<?php include_once '../../includes/menu.php';?>
 			<br> <br> <br> <br>
 		</div>
 		<div id="form1" style="width:60em;" >
@@ -119,11 +119,11 @@ include '../../includes/check.php';
 									<b>Duty Area Details</b>
 								</tr>
 								<tr>
-									<th width="30"><a><img class="s_button" width=30 height=30 src="img/delete.png" onclick="del_row()" /> </a></th>
+									<th width="30"><a><img class="s_button" width=30 height=30 src="../../img/delete.png" onclick="del_row()" /> </a></th>
 									<th width="400">Area Code</th>
 									<th width="400">Area Description</th>
 									<th width="400">Location</th>
-									<th width="30"><a href="duty_area_new.php"><img class="s_button" width=30 height=30 src="img/add.png" /> </a></th>
+									<th width="30"><a href="duty_area_new.php"><img class="s_button" width=30 height=30 src="../../img/add.png" /> </a></th>
 								</tr>
 								<?php 
 									$i=0;
@@ -134,7 +134,7 @@ include '../../includes/check.php';
 										echo "<td id=$row[area_id]c >$row[area_code1]-$row[area_code2]</td>";
 										echo "<td id=$row[area_id]d >$row[area_description]</td>";
 										echo "<td id=$row[area_id]l >$row[loc_description]</td>";
-										echo "<td ><a href=\"#\"><img id=$row[area_id] class=\"s_button\" width=30 height=25 src=\"img/edit.png\" onclick=\"edit(this.id)\" /></a></td>";
+										echo "<td ><a href=\"#\"><img id=$row[area_id] class=\"s_button\" width=30 height=25 src=\"../../img/edit.png\" onclick=\"edit(this.id)\" /></a></td>";
 										echo "</tr>";
 										$i++;
 									}
