@@ -1,0 +1,32 @@
+#Caching schema
+<FilesMatch "\.(htm|html|php|css|js)$">
+Header set Cache-Control "no-cache,no-store, must-revalidate, max-age=0"
+Header set Pragma "no-cache"
+Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</FilesMatch>
+
+#deny direct access to documents
+<FilesMatch "\.(pdf|pptx)$">
+order allow,deny
+deny from all
+</FilesMatch>
+
+# serve first available alternate default index page from series
+#DirectoryIndex login.php index.php home.php
+
+#Prevent directory listings
+#Options All -Indexes
+ 
+# prevent folder listing
+#IndexIgnore *
+
+RewriteEngine On
+#RewriteRule ^new/(.*)/?$ test.html 
+RewriteRule ^sms/(.*)/?$ sms/public_html/$1.php 
+
+#allows everything if its on a certain host
+Order Deny,Allow
+Deny from All
+Allow from Localhost
+Allow from 192.168.0.0/16
+Allow from 127.0.0.1

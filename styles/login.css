@@ -1,0 +1,73 @@
+body {
+    font: normal .8em/1.5em Arial, Helvetica, sans-serif;
+    background: #ebebeb;
+    color: #666;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.errormess {
+    color: red;
+}
+legend {
+    text-transform: uppercase;
+    font-size: 1.3em;
+    padding: 5px;
+    margin-left: 6.7em;
+    color: #7d7d7d;
+}
+
+div#form1 {
+    width: 30em;
+    height: 20em;
+    margin: 0 auto;
+}
+
+form {
+    border-radius: 1em;
+    border: 0px;
+    box-shadow: 0 0 10px 0px #0078ff;
+}
+
+div#tbl table input[type=text], input[type=password] {
+    float: right;
+}
+
+input[type=submit] {
+    width: 6em;
+    height: 2.3em;
+    margin-left: 10em;
+}
+
+div#tbl table {
+    width: 100%;
+}
+
+fieldset {
+    font-size: larger;
+    /*background: url(img/gradient1.png) repeat-x 0 -280px;*/
+	background-image: linear-gradient(bottom, rgb(222,222,222) 15%, rgb(255,255,255) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(222,222,222) 15%, rgb(255,255,255) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(222,222,222) 15%, rgb(255,255,255) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(222,222,222) 15%, rgb(255,255,255) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(222,222,222) 15%, rgb(255,255,255) 61%);
+    background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.15, rgb(222,222,222)),
+    color-stop(0.61, rgb(255,255,255))
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dedede');
+    background-color: #0078ff;
+    border-radius: 1em;
+    border: 0px;
+    /* box-shadow: 0 0 10px 0px #0078ff;*/
+
+    /*box-shadow:0 0 5px 0 #0078ff  inset;*/
+
+}
