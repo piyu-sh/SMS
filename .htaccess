@@ -12,7 +12,7 @@ deny from all
 </FilesMatch>
 
 # serve first available alternate default index page from series
-#DirectoryIndex login.php index.php home.php
+DirectoryIndex login.php index.php home.php 
 
 #Prevent directory listings
 #Options All -Indexes

@@ -474,7 +474,7 @@
         </ul>
     </li>
 	<li>
-        <a href="signout.php">Sign Out</a>
+        <a href="../../lib/signout.php">Sign Out</a>
     </li>
 </ul>
 </body>
