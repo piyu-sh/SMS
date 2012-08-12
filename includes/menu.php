@@ -12,7 +12,7 @@
     <body>
 <ul id="nav">
     <li <?php echo ($this_page=='home') ? 'class="current"' : '' ; ?> >
-        <a href="../../home">Home</a>
+        <a href="../../home/home">Home</a>
     </li>
     <li <?php echo ($this_page=='duty_details') ? 'class="current"' : '' ; ?> >
         <a href="#">Duty Details</a>
@@ -21,10 +21,10 @@
                 <a href="#">Duty Locations</a>
                 <ul>
                     <li >
-                        <a href="../duty_details/duty_location_new">New</a>
+                        <a href="../../duty_details/duty_location_new">New</a>
                     </li>
                     <li>
-                        <a href="../duty_detailsduty_location_view">View</a>
+                        <a href="../../duty_details/duty_location_view">View</a>
                     </li>
                 </ul>
             </li>
@@ -32,10 +32,10 @@
                 <a href="#">Duty Areas</a>
                 <ul>
                     <li>
-                        <a href="duty_area_new.php">New</a>
+                        <a href="../../duty_details/duty_area_new">New</a>
                     </li>
                     <li>
-                        <a href="duty_area_search.php">Search</a>
+                        <a href="../../duty_details/duty_area_search">Search</a>
                     </li>
                 </ul>
             </li>
@@ -43,10 +43,10 @@
                 <a href="#">Duty Points</a>
                 <ul>
                     <li>
-                        <a href="duty_point_new.php">New</a>
+                        <a href="../../duty_details/duty_point_new">New</a>
                     </li>
                     <li>
-                        <a href="duty_point_search.php">Search</a>
+                        <a href="../../duty_details/duty_point_search">Search</a>
                     </li>
                 </ul>
             </li>
@@ -54,10 +54,10 @@
                 <a href="#">Facilitation Types</a>
                 <ul>
                     <li>
-                        <a href="facilitation_and_security_new.php">New</a>
+                        <a href="../../duty_details/facilitation_and_security_new">New</a>
                     </li>
                     <li>
-                        <a href="facilitation_and_security_view.php">View</a>
+                        <a href="../../duty_details/facilitation_and_security_view">View</a>
                     </li>
                 </ul>
             </li>
@@ -70,10 +70,10 @@
                 <a href="#">Designations</a>
                 <ul>
                     <li>
-                        <a href="cisf_designation_new.php">New</a>
+                        <a href="../../cisf_details/cisf_designation_new">New</a>
                     </li>
                     <li>
-                        <a href="cisf_designation_view.php">View</a>
+                        <a href="../../cisf_details/cisf_designation_view">View</a>
                     </li>
                 </ul>
             </li>
@@ -81,10 +81,10 @@
                 <a href="#">Guards Per Location</a>
                 <ul>
                     <li>
-                        <a href="cisf_guards_per_location_new.php">New</a>
+                        <a href="../../cisf_details/cisf_guards_per_location_new.php">New</a>
                     </li>
                     <li>
-                        <a href="cisf_guards_per_location_search.php">Search</a>
+                        <a href="../../cisf_details/cisf_guards_per_location_search">Search</a>
                     </li>
                 </ul>
             </li>
@@ -92,10 +92,10 @@
                 <a href="#">Security Personnel</a>
                 <ul>
                     <li>
-                        <a href="cisf_security_personnel_new.php">New</a>
+                        <a href="../../cisf_details/cisf_security_personnel_new">New</a>
                     </li>
                     <li>
-                        <a href="cisf_security_personnel_search.php">Search</a>
+                        <a href="../../cisf_details/cisf_security_personnel_search">Search</a>
                     </li>
                 </ul>
             </li>
@@ -103,10 +103,10 @@
                 <a href="#">Shifts</a>
                 <ul>
                     <li>
-                        <a href="cisf_shifts_new.php">New</a>
+                        <a href="../../cisf_details/cisf_shifts_new">New</a>
                     </li>
                     <li>
-                        <a href="cisf_shifts_view.php">View</a>
+                        <a href="../../cisf_details/cisf_shifts_view">View</a>
                     </li>
                 </ul>
             </li>
@@ -114,10 +114,10 @@
                 <a href="#">Shifts Wise Security Personnel</a>
                 <ul>
                     <li>
-                        <a href="cisf_shift_wise_security_personnel_new.php">New</a>
+                        <a href="../../cisf_details/cisf_shift_wise_security_personnel_new">New</a>
                     </li>
                     <li>
-                        <a href="cisf_shift_wise_security_personnel_search.php">Search</a>
+                        <a href="../../cisf_details/cisf_shift_wise_security_personnel_search">Search</a>
                     </li>
                 </ul>
             </li>

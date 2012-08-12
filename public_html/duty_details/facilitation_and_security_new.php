@@ -4,7 +4,7 @@ include '../../includes/check.php';
 
 	if(!empty($_POST))
 	{
-		include '../../includes/open_db.h';
+		include '../../includes/open_db.php';
 		$facility=$_POST["facility"];
 		$facility_type=$_POST["facility_type"];
 		$sub_facility_type=$_POST["sub_facility_type"];

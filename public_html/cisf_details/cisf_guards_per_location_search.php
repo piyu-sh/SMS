@@ -2,7 +2,7 @@
 	$this_page='cisf_details';
 include '../../includes/check.php';
 
-	include_once  '../../includes/open_db.h';
+	include_once  '../../includes/open_db.php';
 	$result=mysql_query("select * from duty_point") or die(mysql_error());
 	$result1=mysql_query("select * from cisf_designation") or die(mysql_error());
 ?>

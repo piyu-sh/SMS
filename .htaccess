@@ -28,10 +28,13 @@ Allow from Localhost
 Allow from 192.168.0.0/16
 Allow from 127.0.0.1
 
-
+#URL Rewrites
 RewriteEngine On
 RewriteCond %{REQUEST_URI} !.*\.(css|jpg|gif|png|js|php)$
 RewriteCond %{REQUEST_URI} !/$ 
-RewriteRule (.*) http://localhost/sms/$1/ [R]
+RewriteRule (.*) http://localhost/sms1/$1/ [R]
 RewriteCond %{REQUEST_URI} !.*\.(css|jpg|gif|png|js|php)$
 RewriteRule ^(.*)/$ public_html/$1.php [L]
+
+#Includes
+#php_value include_path ../../includes/

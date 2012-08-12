@@ -38,7 +38,7 @@ if (!empty($_POST)) {
 					session_regenerate_id(true);
 					$_SESSION['sess_id']=session_id();
 					$_SESSION['username']=$username;
-					header("Location: public_html/home/");
+					header("Location: home/home/");
 				} else {
 					$error['password'] = "<span class=\"errormess\">You entered wrong Username/Password</span><br/>";
 

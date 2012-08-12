@@ -4,7 +4,7 @@ include '../../includes/check.php';
 
 	if(!empty($_POST))
 	{
-		include '../../includes/open_db.h';
+		include '../../includes/open_db.php';
 		$desig_code=$_POST["desig_code"];
 		$desig_description=$_POST["desig_description"];
 		$query="insert into cisf_designation(`desig_code`,`desig_description`) values('$desig_code','$desig_description')";

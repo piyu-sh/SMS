@@ -6,7 +6,7 @@ include '../../includes/check.php';
 	{
 		$dp_desc=$_POST['dp_list'];
 		$desig_description=explode(" ",$_POST['desig_list']);
-		include_once '../../includes/open_db.h';
+		include_once '../../includes/open_db.php';
 		$query="SELECT * FROM `cisf_gpl` WHERE `dp_description`= '$dp_desc' and (`desig_description` like '%$desig_description[0]%'";
 		foreach ($desig_description as $desc)
 		{

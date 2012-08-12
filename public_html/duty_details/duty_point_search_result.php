@@ -7,7 +7,7 @@ include '../../includes/check.php';
 		$loc_desc=$_POST['loc_list'];
 		$area_desc=$_POST['area_list'];
 		$dp_description=explode(" ",$_POST['dp_description']);
-		include_once '../../includes/open_db.h';
+		include_once '../../includes/open_db.php';
 		$result=mysql_query("select area_code2 from duty_area where area_description='$area_desc' ") or die(mysql_error());
 		while ($row = mysql_fetch_array($result))
 		{

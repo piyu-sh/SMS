@@ -2,7 +2,7 @@
 	$this_page='duty_details';
 include '../../includes/check.php';
 
-	include_once  '../../includes/open_db.h';
+	include_once  '../../includes/open_db.php';
 	$result=mysql_query("select * from duty_location") or die(mysql_error());
 ?>
 

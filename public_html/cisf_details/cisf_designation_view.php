@@ -2,7 +2,7 @@
 	$this_page='cisf_details';
 include '../../includes/check.php';
 
-	include '../../includes/open_db.h';
+	include '../../includes/open_db.php';
 	if(!empty($_POST))
 	{
 		$query1="select * from  cisf_designation";

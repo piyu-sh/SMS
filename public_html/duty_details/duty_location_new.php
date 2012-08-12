@@ -3,7 +3,7 @@ include '../../includes/check.php';
 
 if(!empty($_POST))
 {
-	include '../../includes/open_db.h';
+	include '../../includes/open_db.php';
 	$loc_code=$_POST["loc_code"];
 	$loc_description=$_POST["loc_description"];
 	$loc_remarks=$_POST["loc_remarks"];

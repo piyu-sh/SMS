@@ -6,7 +6,7 @@ include '../../includes/check.php';
 	{
 		$loc_description=$_POST['loc_description'];
 		$area_description=explode(" ",$_POST['area_description']);
-		include_once '../../includes/open_db.h';
+		include_once '../../includes/open_db.php';
 		$result=mysql_query("select loc_code from duty_location where loc_description='$loc_description'") or die(mysql_error());
 		while ($row = mysql_fetch_array($result))
 		{
