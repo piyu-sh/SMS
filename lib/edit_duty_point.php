@@ -6,7 +6,7 @@
 	$no_shifts=$values[3];
 	$shifts=$values[4];
 	$dp_remark=$values[5];
-	include 'open_db.php';
+	include '../includes/open_db.php';
 	mysql_query("update `duty_point` set `dp_code3`='$dp_code',`dp_description`='$dp_desc',`no_shifts`='$no_shifts',`shifts`='$shifts',`dp_remarks`='$dp_remark' where `dp_id`='$dp_id' ") or die(mysql_error());
 	$result1=mysql_query("select * from `duty_point` where `dp_id`='$dp_id' ") or die(mysql_error());
 	$values1 = mysql_fetch_row($result1);

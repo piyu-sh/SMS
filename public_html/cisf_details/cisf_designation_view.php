@@ -39,7 +39,7 @@ include '../../includes/check.php';
 					var code_id=str+'c';
 					var desc_id=str+'d';
 					var xmlhttp=new XMLHttpRequest();
-					xmlhttp.open("GET","edit_cisf_desig.php?values="+values,true);
+					xmlhttp.open("GET","../../lib/edit_cisf_desig.php?values="+values,true);
 					xmlhttp.send();
 					xmlhttp.onreadystatechange=function()
 					{
@@ -59,7 +59,7 @@ include '../../includes/check.php';
 			<br/><br/><br/><br/>
         </div>
 		<div id="form1" style="width:60em;">
-			<form id='login' action="#" method='post' accept-charset='UTF-8'>
+			<form id='myform' name='myform'  action="#" method='post' accept-charset='UTF-8'>
 				<fieldset>
 					<legend>
 						<strong>CISF Designation [View]</strong>

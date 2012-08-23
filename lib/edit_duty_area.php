@@ -4,7 +4,7 @@
 	$area_code=$values[1];
 	$area_desc=$values[2];
 	$area_remark=$values[3];
-	include 'open_db.php';
+	include '../includes/open_db.php';
 	mysql_query("update `duty_area` set `area_code2`='$area_code',`area_description`='$area_desc',`area_remarks`='$area_remark' where `area_id`='$area_id' ") or die(mysql_error());
 	$result1=mysql_query("select * from `duty_area` where `area_id`='$area_id' ") or die(mysql_error());
 	$values1 = mysql_fetch_row($result1);

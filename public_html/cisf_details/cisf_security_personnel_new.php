@@ -23,8 +23,8 @@ include '../../includes/check.php';
         <div>
             <?php include_once 'menu.php';?><br><br><br><br>
         </div>
-        <div id="form1" style="width:60em; height:20em;">
-            <form id='login' action="#" method='post' accept-charset='UTF-8'>
+        <div id="form1" >
+            <form id='myform' name='myform'  action="#" method='post' accept-charset='UTF-8'>
                 <fieldset>
                     <legend>
                         <strong>Security Personel [New]</strong>

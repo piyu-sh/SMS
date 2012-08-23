@@ -3,7 +3,7 @@
 	$loc_id=$values[0];
 	$loc_code=$values[1];
 	$loc_desc=$values[2];
-	include 'open_db.php';
+	include '../includes/open_db.php';
 	mysql_query("update `duty_location` set `loc_code`='$loc_code',`loc_description`='$loc_desc' where `loc_id`='$loc_id'") or die(mysql_error());
 	$result=mysql_query("select * from `duty_location` where `loc_id`='$loc_id'") or die(mysql_error());
 	$values1 = mysql_fetch_row($result);

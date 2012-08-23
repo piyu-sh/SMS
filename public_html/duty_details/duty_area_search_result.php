@@ -45,7 +45,7 @@ include '../../includes/check.php';
 					var loc_des=str+'l';
 					var values=str+"~^"+code+"~^"+desc+"~^"+remark;
 					var xmlhttp=new XMLHttpRequest();
-					xmlhttp.open("GET","edit_duty_area.php?values="+values,true);
+					xmlhttp.open("GET","../../lib/edit_duty_area.php?values="+values,true);
 					xmlhttp.send();
 					xmlhttp.onreadystatechange=function()
 					{
@@ -79,7 +79,7 @@ include '../../includes/check.php';
 			{
 				var str1=set_check("");
 				var xmlhttp=new XMLHttpRequest();
-				xmlhttp.open("GET","del_duty_area.php?values="+str1,true);
+				xmlhttp.open("GET","../../lib/del_duty_area.php?values="+str1,true);
 				xmlhttp.send();
 				xmlhttp.onreadystatechange=function()
 				{
@@ -107,7 +107,7 @@ include '../../includes/check.php';
 			<br> <br> <br> <br>
 		</div>
 		<div id="form1" style="width:60em;" >
-			<form id='login' name='login' action="#" method='post' accept-charset='UTF-8'>
+			<form id='myform' name='myform'  name='login' action="#" method='post' accept-charset='UTF-8'>
 				<fieldset>
 					<legend>
 						<strong>Duty Area Search Result</strong>

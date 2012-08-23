@@ -18,7 +18,7 @@
             <?php include_once 'menu.php';?><br><br><br><br>
         </div>
         <div id="form1">
-            <form id='login' action="#" method='post' accept-charset='UTF-8'>
+            <form id='myform' name='myform'  action="#" method='post' accept-charset='UTF-8'>
                 <fieldset>
                     <legend align="center" >
                         <strong>Report on the Returned Passes and Lost Passes</strong>

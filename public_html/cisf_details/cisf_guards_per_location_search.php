@@ -38,8 +38,8 @@ include '../../includes/check.php';
             <?php include_once 'menu.php';?>
 			<br/><br/><br/><br/>
         </div>
-        <div id="form1" style="width:32em; height:20em;">
-            <form id='login' action="cisf_guards_per_location_search_result.php" method='post' onsubmit="return validateForm()" accept-charset='UTF-8'>
+        <div id="form1" >
+            <form id='myform' name='myform'  action="cisf_guards_per_location_search_result.php" method='post' onsubmit="return validateForm()" accept-charset='UTF-8'>
                 <fieldset>
                     <legend>
                         <strong>Guards Per Location [Search]</strong>

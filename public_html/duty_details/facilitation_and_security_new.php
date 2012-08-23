@@ -39,8 +39,8 @@ include '../../includes/check.php';
             <?php include_once '../../includes/menu.php';?>
 			<br /><br /><br /><br />
         </div>
-        <div id="form1" style="width:45em; height:20em;">
-            <form id='login' action="facilitation_and_security_new.php" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
+        <div id="form1" >
+            <form id='myform' name='myform'  action="facilitation_and_security_new.php" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
                 <fieldset>
                     <legend>
                         <strong>Facilitation And Security [New]</strong>

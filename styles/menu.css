@@ -15,7 +15,7 @@ a {
 }
 
 #nav {
-    margin: 0;
+    margin-bottom: 2em;
     padding: 0.5em 0.5em 0;
     background: #7d7d7d url(../img/gradient.png) repeat-x 0 -250px;
     line-height: 100%;

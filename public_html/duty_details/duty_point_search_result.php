@@ -48,7 +48,7 @@ include '../../includes/check.php';
 					var shift_id=str+'s';
 					var values=str+"~^"+code+"~^"+desc+"~^"+no_shifts+"~^"+shifts+"~^"+remark;
 					var xmlhttp=new XMLHttpRequest();
-					xmlhttp.open("GET","edit_duty_point.php?values="+values,true);
+					xmlhttp.open("GET","../../lib/edit_duty_point.php?values="+values,true);
 					xmlhttp.send();
 					xmlhttp.onreadystatechange=function()
 					{
@@ -84,7 +84,7 @@ include '../../includes/check.php';
 			{
 				var str1=set_check("");
 				var xmlhttp=new XMLHttpRequest();
-				xmlhttp.open("GET","del_duty_point.php?values="+str1,true);
+				xmlhttp.open("GET","../../lib/del_duty_point.php?values="+str1,true);
 				xmlhttp.send();
 				xmlhttp.onreadystatechange=function()
 				{
@@ -111,7 +111,7 @@ include '../../includes/check.php';
 			<br /> <br /> <br /> <br />
 		</div>
 		<div id="form1" style="width:60em;" >
-			<form id='login' action="#" method='post' accept-charset='UTF-8'>
+			<form id='myform' name='myform'  action="#" method='post' accept-charset='UTF-8'>
 				<fieldset>
 					<legend>
 						<strong>Duty Point [Search]</strong>

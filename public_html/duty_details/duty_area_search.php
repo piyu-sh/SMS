@@ -33,8 +33,8 @@ include '../../includes/check.php';
             <?php include_once '../../includes/menu.php';?>
 			<br><br><br><br>
         </div>
-        <div id="form1" style="width:32em; height:20em;">
-            <form id='login' action="duty_area_search_result.php" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
+        <div id="form1" >
+            <form id='myform' name='myform'  action="duty_area_search_result.php" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
                 <fieldset>
                     <legend>
                         <strong>Duty Area [Search]</strong>

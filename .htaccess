@@ -15,7 +15,7 @@ deny from all
 DirectoryIndex login.php index.php home.php 
 
 #Prevent directory listings
-#Options All -Indexes
+Options All -Indexes
  
 # prevent folder listing
 #IndexIgnore *
@@ -30,11 +30,18 @@ Allow from 127.0.0.1
 
 #URL Rewrites
 RewriteEngine On
+RewriteCond %{REQUEST_URI} .*\.(phpx)$ 
+RewriteRule ^(.*)/(.*)/(.*)\.phpx public_html/$1/$3.php [L]
+#RewriteCond %{REQUEST_URI} .*-php-id=(.*)$
+#RewriteRule ^(.*)/(.*)/(.*)-(.*)-php-id=(.*)$ public_html/$1/$4.php?id=$5 [L]
+#RewriteCond %{REQUEST_URI} .*\.(php)$
+#RewriteRule ^(.*)/(.*)/(.*)/(.*)\.php public_html/$1/$2.php [L]
 RewriteCond %{REQUEST_URI} !.*\.(css|jpg|gif|png|js|php)$
 RewriteCond %{REQUEST_URI} !/$ 
 RewriteRule (.*) http://localhost/sms1/$1/ [R]
 RewriteCond %{REQUEST_URI} !.*\.(css|jpg|gif|png|js|php)$
 RewriteRule ^(.*)/$ public_html/$1.php [L]
+
 
 #Includes
 #php_value include_path ../../includes/

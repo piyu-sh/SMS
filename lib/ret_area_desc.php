@@ -1,6 +1,6 @@
 <?php
 	$str=$_GET['str'];
-	include 'open_db.php';
+	include '../includes/open_db.php';
 	$result1=mysql_query("select loc_code from duty_location where loc_description='$str'") or die(mysql_error()); 
 	while ($row = mysql_fetch_array($result1))
 	{

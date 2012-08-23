@@ -37,7 +37,7 @@ include '../../includes/check.php';
 					var values=str+"~^"+facility;
 					var new_facility=str+'f';
 					var xmlhttp=new XMLHttpRequest();
-					xmlhttp.open("GET","edit_facilitation.php?values="+values,true);
+					xmlhttp.open("GET","../../lib/edit_facilitation.php?values="+values,true);
 					xmlhttp.send();
 					xmlhttp.onreadystatechange=function()
 					{
@@ -54,7 +54,7 @@ include '../../includes/check.php';
 			<br><br><br><br>
 		</div>
 		<div id="form1" style="width:60em;">
-			<form id='login' action="#" method='post' accept-charset='UTF-8'>
+			<form id='myform' name='myform'  action="#" method='post' accept-charset='UTF-8'>
 				<fieldset>
 					<legend>
 						<strong>Facilitation Types [View]</strong>

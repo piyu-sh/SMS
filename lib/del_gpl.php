@@ -1,7 +1,7 @@
 <?php 
 	$values=str_replace("b","",$_GET['values']);
 	$values1=explode("_",$values);
-	include_once 'open_db.php';
+	include_once '../includes/open_db.php';
 	foreach($values1 as $x=>$y)
 	{
 		if($y)
