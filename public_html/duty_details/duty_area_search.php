@@ -34,7 +34,7 @@ include '../../includes/check.php';
 			<br><br><br><br>
         </div>
         <div id="form1" >
-            <form id='myform' name='myform'  action="duty_area_search_result.php" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
+            <form id='myform' name='myform'  action="../duty_area_search_result/" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
                 <fieldset>
                     <legend>
                         <strong>Duty Area [Search]</strong>
@@ -68,7 +68,7 @@ include '../../includes/check.php';
 								</tr>
                                 <tr>
                                     <td colspan="2">
-										<a href="duty_area_new.php"><img class="s_button" width=30 height=28 src="../../img/add.png" /> </a>
+										<a href="../duty_area_new"><img class="s_button" width=30 height=28 src="../../img/add.png" /> </a>
 										<input id="Search" type='submit' name='Search' value='Search' />
 										<input id="Clear" type='reset' name='Clear' value='Clear' />
                                     </td>

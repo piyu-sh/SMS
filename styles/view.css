@@ -1,19 +1,32 @@
 #form1
 {
-	margin:auto;
+	text-align:center;
 }
 
-form
-{
-	border-radius:1em;
+#myform{
+    display: inline-block  ;
+    border-radius:1em;
 	border:0px;
 	box-shadow: 0 0 10px 0px #0078ff;
 }
 
+#pop
+{
+	display:none; 
+	border:0px;
+	position: absolute; 
+	background: transparent;
+}
 
+#tb1{
+    display:inline-block;
+}
 
 fieldset 
 {
+	display:inline-block;
+	border-radius: 1em;
+	border: 0px;
 	font-size: larger;
 	background-image: linear-gradient(bottom, rgb(222,222,222) 15%, rgb(255,255,255) 61%);
     background-image: -o-linear-gradient(bottom, rgb(222,222,222) 15%, rgb(255,255,255) 61%);
@@ -22,21 +35,17 @@ fieldset
     background-image: -ms-linear-gradient(bottom, rgb(222,222,222) 15%, rgb(255,255,255) 61%);
     background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.15, rgb(222,222,222)),color-stop(0.61, rgb(255,255,255)));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dedede');
-    border-radius:1em;
-    border: 0px;
+	
 }
 
 legend 
 {
+	text-align:center;
 	font-size: 1.3em;
-	padding: 5px;
-	margin:auto;
+	padding-top: 5px;
+	padding-bottom:5px;
+	width:99%;
 	color: #7d7d7d;
-}
-
-#tb1 table
-{
-	width:100%;
 }
 
 label
@@ -62,3 +71,4 @@ input[type=image]
     top: 1px;
     left: 1px;
 }
+

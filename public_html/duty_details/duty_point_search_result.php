@@ -1,24 +1,18 @@
 <?php 
 	$this_page='duty_details';
-include '../../includes/check.php';
-
+	include '../../includes/check.php';
+	include_once '../../includes/open_db.php';
 	if(!empty($_POST))
 	{
 		$loc_desc=$_POST['loc_list'];
 		$area_desc=$_POST['area_list'];
 		$dp_description=explode(" ",$_POST['dp_description']);
-		include_once '../../includes/open_db.php';
 		$result=mysql_query("select area_code2 from duty_area where area_description='$area_desc' ") or die(mysql_error());
 		while ($row = mysql_fetch_array($result))
 		{
 			$area_code=$row['area_code2'];
 		}
-		$query="SELECT dp_id,dp_code1,dp_code2,dp_code3,dp_description,no_shifts,shifts FROM `duty_point` WHERE `dp_code2`='$area_code' and (`dp_description` like '%$dp_description[0]%'";
-		foreach ($dp_description as $desc)
-		{
-			$query=$query." or `dp_description` like '%$desc%'";
-		}
-		$query=$query.")";
+		$query="SELECT dp_id,dp_code1,dp_code2,dp_code3,dp_description,no_shifts,shifts FROM `duty_point` WHERE `dp_code2`='$area_code' )";
 		$result1=mysql_query($query) or die(mysql_error());
 	}
 ?>
@@ -127,7 +121,7 @@ include '../../includes/check.php';
 									<th width="400">Duty Point Description</th>
 									<th width="400">No of Shifts</th>
 									<th width="400">Shifts</th>
-									<th width="30"><a href="duty_point_new.php"> <img class="s_button" height=30 width=30 src='../../img/add.png' alt='Add' /> </a></th>
+									<th width="30"><a href="../duty_point_new"> <img class="s_button" height=30 width=30 src='../../img/add.png' alt='Add' /> </a></th>
 								</tr>
 								<?php 
 									$i=0;

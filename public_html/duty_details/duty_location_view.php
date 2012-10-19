@@ -28,7 +28,7 @@ $no_row=mysql_num_rows($result);
 
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset=utf-8 " />
-<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
+<link rel="stylesheet" type="text/css" href="../../styles/view.css" />
 <title>Duty Detail</title>
 
 <script type="text/javascript">
@@ -37,46 +37,21 @@ function edit(str)
 {
 	var fr=document.getElementById("pop");
 	fr.src="duty_location_new.phpx?id="+str;
-	//fr.src="-duty_location_new-php-id="+str;
-	document.getElementById("bg").style.display="block";
-	fr.style.display="inline";	
+	fr.style.display="inline";
+	document.getElementById("myform").style.visibility="hidden";	
 }
 
-function fitFrame()
-{	
-	var fr=document.getElementById("pop");
-	var newheight=fr.contentDocument.forms.myform.scrollHeight;
-	var newwidth=fr.contentDocument.forms.myform.scrollWidth;
-	fr.height=(newheight) + "px";
-	fr.width=(newwidth) + "px";
-	fr.contentDocument.getElementById("form1").style.textAlign="left";
-	fr.contentDocument.body.style.margin="0";
-}
-
-function popClose()
-{
-	document.getElementById("bg").style.display="none";
-	document.getElementById("pop").style.display="none";
-	
-}
-		</script>
+</script>
 </head>
 
 <body>
-	<div id='bg'
-		style="display: none; opacity: 0.5; background: #fff; position: absolute; height: 100%; width: 100%; z-index: 2;"
-		onclick="popClose()"></div>
 	<div>
 		<?php include_once '../../includes/menu.php';?>
 		<br><br><br><br>
-	
 	</div>
 	<div id="form1">
-		<iframe id="pop" src="about:blank" name="pop" frameborder=0
-			 scrolling="no" onload="fitFrame()"
-			style="	margin:3em 20em auto;"></iframe>
-			<form id='myform' name='myform' action="duty_location_view.php"
-			method='post' accept-charset='UTF-8'>
+		<iframe id="pop" src="about:blank" name="pop" scrolling="no" style="margin:0em 18em auto; width:42em; height:20em;"></iframe>
+			<form id='myform' name='myform' action="#"	method='post' accept-charset='UTF-8'>
 			<fieldset>
 				<legend>
 					<strong>Duty Location [View]</strong>
@@ -92,7 +67,7 @@ function popClose()
 									src='../../img/delete.png' alt='Delete' /></th>
 								<th width="400">Loc Code</th>
 								<th width="400">Location Description</th>
-								<th width="30"><a href="duty_location_new.php"> <img
+								<th width="30"><a href="../duty_location_new"> <img
 										class="s_button" src="../../img/add.png" width="30"
 										height="30">
 								

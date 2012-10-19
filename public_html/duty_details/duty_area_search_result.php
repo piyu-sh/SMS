@@ -28,36 +28,18 @@ include '../../includes/check.php';
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
+		<link rel="stylesheet" type="text/css" href="../../styles/view.css" />
 		<title>Duty Detail</title>
 		
 		<script type="text/javascript">
 			var x="";
 			function edit(str)
 			{
-				var code=prompt("Enter new Area Code (max 10 characters)");
-				var desc=prompt("Enter new Area Description (max 50 characters)");
-				var remark=prompt("Enter new Area Remarks(max 50 characters)");
-				if(code && desc)
-				{
-					var code_id=str+'c';
-					var desc_id=str+'d';
-					var loc_des=str+'l';
-					var values=str+"~^"+code+"~^"+desc+"~^"+remark;
-					var xmlhttp=new XMLHttpRequest();
-					xmlhttp.open("GET","../../lib/edit_duty_area.php?values="+values,true);
-					xmlhttp.send();
-					xmlhttp.onreadystatechange=function()
-					{
-						var pre_code1=xmlhttp.responseText;
-						code1= pre_code1.split("~^");
-						code2=code1[0]+"-"+code1[1];
-						document.getElementById(code_id).textContent=code2;
-						document.getElementById(desc_id).textContent=code1[2];
-					}
-				}
+				var fr=document.getElementById("pop");
+				fr.src="duty_area_new.phpx?id="+str;
+				fr.style.display="inline";
+				document.getElementById("myform").style.visibility="hidden";	
 			}
-
 			function set_check(str)
 			{
 				if(str)
@@ -106,8 +88,10 @@ include '../../includes/check.php';
 			<?php include_once '../../includes/menu.php';?>
 			<br> <br> <br> <br>
 		</div>
-		<div id="form1" style="width:60em;" >
+		<div id="form1">
+			<iframe id="pop" src="about:blank" name="pop" scrolling="no" style="margin:0em 30em auto; width:42em; height:21em;"></iframe>
 			<form id='myform' name='myform'  name='login' action="#" method='post' accept-charset='UTF-8'>
+			
 				<fieldset>
 					<legend>
 						<strong>Duty Area Search Result</strong>
@@ -145,5 +129,6 @@ include '../../includes/check.php';
 				</fieldset>
 			</form>
 		</div>
+		<?php mysql_close($link); ?>
 	</body>
 </html>

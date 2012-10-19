@@ -1,6 +1,6 @@
 #form1
 {
-		text-align:center;
+	text-align:center;
 }
 
 #myform
@@ -9,24 +9,14 @@
     text-align: left;
 	border-radius:1em;
 	border:0px;
+	margin-left:1em;
 	box-shadow: 0 0 10px 0px #0078ff;
 }
 
-#pop
-{
-	display:none; 
-	position: absolute; 
-	z-index: 10;
-	background: transparent;
-	border-radius: 1em;
-	border: 0px; 
-	box-shadow: 0 0 10px 0px #0078ff;
-}
 
 textarea {
     resize: none;
     overflow-y: scroll;
-    /*margin-left: 2em;*/
 }
 
 .s_button:hover 
@@ -41,7 +31,7 @@ textarea {
     left: 1px;
 }
 
-input[type=reset], input[type=submit]
+input[type=reset], input[type=submit],input[type=button]
 {
     width: 6em;
     height: 2.3em;
@@ -76,7 +66,6 @@ fieldset
 {
 	border-radius: 1em;
 	border: 0px;
-	
 	font-size: larger;
 	background-image: linear-gradient(bottom, rgb(222,222,222) 15%, rgb(255,255,255) 61%);
     background-image: -o-linear-gradient(bottom, rgb(222,222,222) 15%, rgb(255,255,255) 61%);

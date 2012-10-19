@@ -93,7 +93,7 @@ include '../../includes/check.php';
 				<br /> <br /> <br /> <br />
 			</div>
 			<div id="form1"  >
-				<form id='myform' name='myform'  action="duty_point_new.php" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
+				<form id='myform' name='myform'  action="../duty_point_new" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
 					<fieldset>
 						<legend >
 							<strong>Duty Point [New]</strong>
@@ -185,7 +185,7 @@ include '../../includes/check.php';
 									</tr>
 									<tr>
 										<td colspan="3">
-											<a href="duty_point_search.php"><img src="../../img/search.png" class="s_button" width=30 height=30/> </a> 
+											<a href="../duty_point_search"><img src="../../img/search.png" class="s_button" width=30 height=30/> </a> 
 											<input id="Save" type='submit' name='Save' value='Save' /> 
 											<input id="Clear" type='reset' name='Clear' value='Clear' />
 										</td>
