@@ -12,7 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="../../styles/style.css" />
-        <title>Cis Detail</title>
+        <title>CISF Detail</title>
         <style type="text/css">
 			input[type=text] {float:Left;	margin-left:1em; width:6em;}
 		</style>
