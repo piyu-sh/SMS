@@ -81,7 +81,7 @@
                 <a href="#">Guards Per Location</a>
                 <ul>
                     <li>
-                        <a href="../../cisf_details/cisf_guards_per_location_new.php">New</a>
+                        <a href="../../cisf_details/cisf_guards_per_location_new">New</a>
                     </li>
                     <li>
                         <a href="../../cisf_details/cisf_guards_per_location_search">Search</a>

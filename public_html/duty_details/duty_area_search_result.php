@@ -39,7 +39,9 @@ include '../../includes/check.php';
 				fr.src="duty_area_new.phpx?id="+str;
 				fr.style.display="inline";
 				document.getElementById("myform").style.visibility="hidden";	
+				document.getElementById("header").style.visibility="hidden";	
 			}
+			
 			function set_check(str)
 			{
 				if(str)
@@ -48,11 +50,11 @@ include '../../includes/check.php';
 					{
 						x=x+"_"+str;
 					}
-				}
-				else
-				{
-					str="_"+str;
-					x=x.replace(str,"");
+					else
+					{
+						str="_"+str;
+						x=x.replace(str,"");
+					}
 				}
 				return x;
 			}
@@ -84,7 +86,7 @@ include '../../includes/check.php';
 	</head>
 
 	<body>
-		<div>
+		<div id="header">
 			<?php include_once '../../includes/menu.php';?>
 			<br> <br> <br> <br>
 		</div>
@@ -107,7 +109,7 @@ include '../../includes/check.php';
 									<th width="400">Area Code</th>
 									<th width="400">Area Description</th>
 									<th width="400">Location</th>
-									<th width="30"><a href="duty_area_new.php"><img class="s_button" width=30 height=30 src="../../img/add.png" /> </a></th>
+									<th width="30"><a href="../duty_area_new"> <img class="s_button" src="../../img/add.png" width="30"	height="30"></th>
 								</tr>
 								<?php 
 									$i=0;

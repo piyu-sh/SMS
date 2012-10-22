@@ -39,13 +39,14 @@ function edit(str)
 	fr.src="duty_location_new.phpx?id="+str;
 	fr.style.display="inline";
 	document.getElementById("myform").style.visibility="hidden";	
+	document.getElementById("header").style.visibility="hidden";	
 }
 
 </script>
 </head>
 
 <body>
-	<div>
+	<div id="header">
 		<?php include_once '../../includes/menu.php';?>
 		<br><br><br><br>
 	</div>

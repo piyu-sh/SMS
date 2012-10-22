@@ -1,6 +1,6 @@
 <?php 
 	$this_page='cisf_details';
-include '../../includes/check.php';
+	include '../../includes/check.php';
 
 	include '../../includes/open_db.php';
 	if(!empty($_POST))
@@ -25,40 +25,29 @@ include '../../includes/check.php';
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
+		<link rel="stylesheet" type="text/css" href="../../styles/view.css" />
 		<title>CISF Detail</title>
 		
 		<script type="text/javascript">
 			function edit(str)
 			{
-				var code=prompt("Enter new Designation Code (max 10 characters)");
-				var desc=prompt("Enter new Designation Description (max 50 characters)");
-				if(code && desc)
-				{
-					var values=str+"~^"+code+"~^"+desc;
-					var code_id=str+'c';
-					var desc_id=str+'d';
-					var xmlhttp=new XMLHttpRequest();
-					xmlhttp.open("GET","../../lib/edit_cisf_desig.php?values="+values,true);
-					xmlhttp.send();
-					xmlhttp.onreadystatechange=function()
-					{
-						var pre_code1=xmlhttp.responseText;
-						code1= pre_code1.split("~^");
-						document.getElementById(code_id).textContent=code1[0];
-						document.getElementById(desc_id).textContent=code1[1];
-					}
-				}
+				var fr=document.getElementById("pop");
+				fr.src="cisf_designation_new.phpx?id="+str;
+				fr.style.display="inline";
+				document.getElementById("myform").style.visibility="hidden";	
+				document.getElementById("header").style.visibility="hidden";
+				document.getElementById("header").style.visibility="hidden";				
 			}
 		</script>
 	</head>
 
 	<body>
-		<div>
-            <?php include_once 'menu.php';?>
+		<div id="header">
+            <?php include_once '../../includes/menu.php';?>
 			<br/><br/><br/><br/>
         </div>
-		<div id="form1" style="width:60em;">
+		<div id="form1">
+			<iframe id="pop" src="about:blank" name="pop" scrolling="no" style="margin:0em 18em auto; width:35em; height:21em;"></iframe>
 			<form id='myform' name='myform'  action="#" method='post' accept-charset='UTF-8'>
 				<fieldset>
 					<legend>
@@ -68,11 +57,14 @@ include '../../includes/check.php';
 					<div id="tbl">
 						<table border="1" cellspacing="2" >
 							<tbody>
+								<tr colspan="2">
+									<b>CISF Designation Detail</b>
+								</tr>
 								<tr>
 									<th width="30"><input class='s_button' type='image' src='../../img/delete.png' alt='Delete' width=30 height=30/></th>
 									<th width="400">Designation Code</th>
 									<th width="400">Designation Description</th>
-									<th width="30"><a href="cisf_designation_new.php"> <img class="s_button" src="../../img/add.png" width=30 height=30></th>
+									<th width="30"><a href="../cisf_designation_new"> <img class="s_button" src="../../img/add.png" width=30 height=30></th>
 								</tr>
 								<?php 
 									while ($row = mysql_fetch_array($result))

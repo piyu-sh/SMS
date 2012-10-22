@@ -1,5 +1,8 @@
-<?php $this_page='cisf_details';
-include '../../includes/check.php';
+<?php 
+	$this_page='cisf_details';
+	include '../../includes/check.php';
+	include_once  '../../includes/open_db.php';
+	$result=mysql_query("select * from cisf_designation") or die(mysql_error());
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -10,15 +13,25 @@ include '../../includes/check.php';
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="../../styles/style.css" />
         <title>Duty Detail</title>
-        
+      	<script type="text/javascript">
+			function validateForm()
+			{
+				var x=document.getElementById("desig_description");
+				if ((x.selectedIndex==-1))
+				{
+					alert("Feilds marked * are mandatory");
+					return false;
+				}
+			}
+		</script>
     </head>
 
-    <body>
+    <body onload="document.forms[0].name1.focus();">
         <div>
-            <?php include_once 'menu.php';?><br><br><br><br>
+            <?php include_once '../../includes/menu.php';?><br><br><br><br>
         </div>
         <div id="form1">
-            <form id='myform' name='myform'  action="#" method='post' accept-charset='UTF-8'>
+            <form id='myform' name='myform'  action="../cisf_security_personnel_search_result/" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
                 <fieldset>
                     <legend>
                         <strong>CISF Security Personel [Search]</strong>
@@ -32,40 +45,36 @@ include '../../includes/check.php';
                                     <th></th>
                                 </tr>
                                 <tr>
-                                    <td><label for='Personnel'>Personnel</label></td>
+                                    <td><label for='desig_description'>*Designation</label></td>
                                     <td>
-										<select>
-											<option>Current Security Personnel</option>
-											<option></option>
+										<select name="desig_description" id="desig_description" style="margin-left:2em; width:17em;">
+											<?php 
+												$i=0;
+												while ($row = mysql_fetch_array($result))
+												{
+													echo "<option name= 'option".$i."'"." id='".$i."' >".$row['desig_description']."</option>";
+													$i++;
+												}
+											?>
 										</select>
 									</td>
 								</tr>
 								
-								 <tr>
-                                    <td><label for='Area'>Designation</label></td>
-                                    <td>
-										<select>
-											<option>Assistant Commandant</option>
-											<option></option>
-										</select>
-									</td>
-								</tr>
-								
 								<tr>
-                                    <td><label for='Duty_Points'>Person Name</label></td>
-                                    <td><input type='text' name='Duty Points' id='Duty_Point' maxlength="20"/></td>
+                                    <td><label for='name1'>Person Name</label></td>
+                                    <td><input type='text' name='name1' id='name1' maxlength="20"  style="margin-left:2em; width:16.5em;"/></td>
                                 </tr>
 								<tr>
-                                    <td><label for='From_Join_Date'>From Join Date</label></td>
-                                    <td><input type='text' name='From_Join_Date' id='From_Join_Date' maxlength="20"/></td>
+                                    <td><label for='from_join_date'>From Join Date</label></td>
+                                    <td><input type='text' name='from_join_date' id='from_join_date' maxlength="20"  style="margin-left:2em; width:16.5em;"/></td>
                                 </tr>
 								<tr>
-                                    <td><label for='To_Join_Date'>To Join Date</label></td>
-                                    <td><input type='text' name='To_Join_Date' id='To_Join_Date' maxlength="20"/></td>
+                                    <td><label for='to_join_date'>To Join Date</label></td>
+                                    <td><input type='text' name='to_join_date' id='to_join_date' maxlength="20"  style="margin-left:2em; width:16.5em;"/></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-									<input type='image' src='../../img/add.png' alt='Search' />
+									<a href="../cisf_security_personnel_new"><img class="s_button" width=30 height=28 src="../../img/add.png" /> </a>
                                     <input id="Search" type='submit' name='Search' value='Search' />
                                     <input id="Clear" type='reset' name='Clear' value='Clear' />
                                     </td>

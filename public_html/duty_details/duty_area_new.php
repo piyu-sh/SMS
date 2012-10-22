@@ -55,7 +55,7 @@
 			}
 		</script>
 	</head>
-	<body>
+	<body onload="document.forms[0].area_code2.focus();">
 		<div id="header" <?php echo @empty($_GET)?"":'style="display:none;"'; ?>>
 			<?php include_once '../../includes/menu.php';?>
 			<br /> <br /> <br /> <br />
@@ -167,13 +167,11 @@
 						parent.document.getElementById(area_code).textContent = values[2]+"-"+values[3];
 						parent.document.getElementById(area_description).textContent = values[4];
 						parent.document.getElementById(location).textContent = values[0];
-						parent.document.getElementById("pop").style.display="none";
-						parent.document.getElementById("myform").style.visibility="visible";
+						popClose();
 					}
 					else
 					alert(err);
-					parent.document.getElementById("pop").style.display="none";
-					parent.document.getElementById("myform").style.visibility="visible";	
+					popClose();	
 				}	
 				
 			}
@@ -181,7 +179,8 @@
 			function popClose()
 			{
 				parent.document.getElementById("pop").style.display="none";
-				parent.document.getElementById("myform").style.visibility="visible";	
+				parent.document.getElementById("myform").style.visibility="visible";
+				parent.document.getElementById("header").style.visibility="visible";
 			}
 		</script>
 	</body>

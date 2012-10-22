@@ -12,7 +12,12 @@
 		{
 			$area_code=$row['area_code2'];
 		}
-		$query="SELECT dp_id,dp_code1,dp_code2,dp_code3,dp_description,no_shifts,shifts FROM `duty_point` WHERE `dp_code2`='$area_code' )";
+		$query="SELECT dp_id,dp_code1,dp_code2,dp_code3,dp_description,no_shifts,shifts FROM `duty_point` WHERE `dp_code2`='$area_code' and (`dp_description` like '%$dp_description[0]%'";
+		foreach ($dp_description as $desc)
+		{
+			$query=$query." or `dp_description` like '%$desc%'";
+		}
+		$query=$query.")";
 		$result1=mysql_query($query) or die(mysql_error());
 	}
 ?>
@@ -22,39 +27,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
+		<link rel="stylesheet" type="text/css" href="../../styles/view.css" />
 		<title>Duty Detail</title>
 		
 		<script type="text/javascript">
 			var x="";
 			function edit(str)
 			{
-				var code=prompt("Enter new Duty Point Code (max 10 characters)");
-				var desc=prompt("Enter new Duty Point Description (max 50 characters)");
-				var no_shifts=prompt("Enter new No. of Shifts");
-				var shifts=prompt("Enter new Shifts (max 10 characters)");
-				var remark=prompt("Enter new Remarks (max 250 characters)");
-				if(code && desc && no_shifts && shifts)
-				{
-					var code_id=str+'c';
-					var desc_id=str+'d';
-					var no_id=str+'n';
-					var shift_id=str+'s';
-					var values=str+"~^"+code+"~^"+desc+"~^"+no_shifts+"~^"+shifts+"~^"+remark;
-					var xmlhttp=new XMLHttpRequest();
-					xmlhttp.open("GET","../../lib/edit_duty_point.php?values="+values,true);
-					xmlhttp.send();
-					xmlhttp.onreadystatechange=function()
-					{
-						var pre_code1=xmlhttp.responseText;
-						code1= pre_code1.split("~^");
-						code2=code1[0]+"-"+code1[1]+"-"+code1[2];
-						document.getElementById(code_id).textContent=code2;
-						document.getElementById(desc_id).textContent=code1[3];
-						document.getElementById(no_id).textContent=code1[4];
-						document.getElementById(shift_id).textContent=code1[5];
-					}
-				}
+				var fr=document.getElementById("pop");
+				fr.src="duty_point_new.phpx?id="+str;
+				fr.style.display="inline";
+				document.getElementById("myform").style.visibility="hidden";	
+				document.getElementById("header").style.visibility="hidden";	
 			}
 
 			function set_check(str)
@@ -100,11 +84,12 @@
 	</head>
 
 	<body>
-		<div>
+		<div id="header">
 			<?php include_once '../../includes/menu.php';?>
-			<br /> <br /> <br /> <br />
+			<br /> <br /> 
 		</div>
-		<div id="form1" style="width:60em;" >
+		<div id="form1" >
+		<iframe id="pop" src="about:blank" name="pop" scrolling="no" style="margin:0em 25em auto; width:42em; height:38em;"></iframe>
 			<form id='myform' name='myform'  action="#" method='post' accept-charset='UTF-8'>
 				<fieldset>
 					<legend>

@@ -1,7 +1,6 @@
 <?php 
 	$this_page='duty_details';
-include '../../includes/check.php';
-
+	include '../../includes/check.php';
 	include_once  '../../includes/open_db.php';
 	$result=mysql_query("select * from duty_location") or die(mysql_error());
 ?>
@@ -28,7 +27,7 @@ include '../../includes/check.php';
 		</script>
 	</head>
 
-    <body>
+    <body onload="document.forms[0].area_description.focus();">
         <div>
             <?php include_once '../../includes/menu.php';?>
 			<br><br><br><br>

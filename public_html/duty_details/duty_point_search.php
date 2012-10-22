@@ -41,13 +41,13 @@ include '../../includes/check.php';
 		</script>
 	</head>
 
-    <body>
+    <body onload="document.forms[0].dp_description.focus();">
         <div>
             <?php include_once '../../includes/menu.php';?>
 			<br /> <br /> <br /> <br />
         </div>
         <div id="form1" >
-            <form id='myform' name='myform'  action="../duty_point_search_result" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
+            <form id='myform' name='myform'  action="../duty_point_search_result/" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
                 <fieldset>
                     <legend>
                         <strong>Duty Point [Search]</strong>

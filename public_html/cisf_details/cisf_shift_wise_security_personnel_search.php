@@ -1,5 +1,8 @@
-<?php $this_page='cisf_details';
-include '../../includes/check.php';
+<?php 
+	$this_page='cisf_details';
+	include '../../includes/check.php';
+	include_once  '../../includes/open_db.php';
+	$result=mysql_query("select * from cisf_swsp") or die(mysql_error());
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -10,18 +13,31 @@ include '../../includes/check.php';
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="../../styles/style.css" />
         <title>Cis Detail</title>
-        
+        <style type="text/css">
+			input[type=text] {float:Left;	margin-left:1em; width:6em;}
+		</style>
+		<script type="text/javascript">
+			function validateForm()
+			{
+				var x=document.getElementById("shift");
+				if ((x.selectedIndex==-1))
+				{
+					alert("Feilds marked * are mandatory");
+					return false;
+				}
+			}
+		</script>
     </head>
 
-    <body>
+    <body onload="document.forms[0].from_date.focus();">
         <div>
-            <?php include_once 'menu.php';?><br><br><br><br>
+            <?php include_once '../../includes/menu.php';?><br><br><br><br>
         </div>
         <div id="form1">
-            <form id='myform' name='myform'  action="#" method='post' accept-charset='UTF-8'>
+            <form id='myform' name='myform'  action="../cisf_shift_wise_security_personnel_search_result/" 	onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
                 <fieldset>
                     <legend>
-                        <strong>CISF Shift Wise Security Personnel [Search]</strong>
+                        <strong>Shift Wise Security Personnel [Search]</strong>
                     </legend>
 
                     <div id="tbl">
@@ -34,23 +50,29 @@ include '../../includes/check.php';
                                     <th></th>
                                 </tr>
                                 <tr>
-                                   <td><label for='From_Date'>From Date</label></td>
-                                   <td><input type='text' name='From_Date' id='From_Date' maxlength="20"/></td>
-								   <td><label for='To Date'>To Date</label></td>
-                                   <td><input type='text' name='To Date' id='To Date' maxlength="20"/></td>
+                                   <td><label for='from_date'>From Date</label></td>
+                                   <td><input type='text' name='from_date' id='from_date' maxlength="20"/></td>
+								   <td><label for='to_date'>To Date</label></td>
+                                   <td><input type='text' name='to_date' id='to_date' maxlength="20"/></td>
 								</tr>
 								<tr>
-                                    <td><label for='Shifts'>Shifts</label></td>
+                                    <td><label for='shift'>*Shifts</label></td>
                                     <td colspan="3">
-										<select id="Shifts">
-											<option>General Shift</option>
-											<option></option>
+										<select id="shift" name="shift" style="float:Left; margin-left:1em; width:23em;">
+											<?php 
+												$i=0;
+												while ($row = mysql_fetch_array($result))
+												{
+													echo "<option name= 'option".$i."'"." id='".$i."' >".$row['shift']."</option>";
+													$i++;
+												}
+											?>
 										</select>
 									</td>
 								</tr>
 								<tr>
 								    <td colspan="4">
-									<input type='image' src='../../img/add.png' alt='Search' />
+									<a href="../cisf_shift_wise_security_personnel_new"><img class="s_button" width=30 height=28 src="../../img/add.png" /> </a>
                                     <input id="Search" type='submit' name='Search' value='Search' />
                                     <input id="Clear" type='reset' name='Clear' value='Clear' />
                                     </td>

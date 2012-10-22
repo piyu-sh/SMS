@@ -1,15 +1,18 @@
 <?php 
-	$values=explode("~^",$_GET['values']);
-	$gpl_id=$values[0];
-	$no_of_persons=$values[1];
-	$remark=$values[2];
+	$postdata = $_POST;
+	$data = array();
+	$i=0;
+	foreach($postdata as $x)
+	{
+		$data[$i]=$x;
+		$i++;
+	}
 	include '../includes/open_db.php';
-	mysql_query("update `cisf_gpl` set `no_of_persons`='$no_of_persons',`gpl_remarks`='$remark' where `gpl_id`='$gpl_id' ") or die(mysql_error());
-	$result1=mysql_query("select `no_of_persons`,`gpl_remarks` from `cisf_gpl` where `gpl_id`='$gpl_id' ") or die(mysql_error());
-	$values1 = mysql_fetch_row($result1);
-	$no_of_persons=$values1[0];
-	$remark=$values1[1];
-	$pre_code=$no_of_persons."~^".$remark;
+	mysql_query("update `cisf_gpl` set `dp_description`='$data[1]',`desig_description`='$data[2]' ,`no_of_persons`='$data[3]',`gpl_remarks`='$data[4]' where `gpl_id`='$data[0]'") or die(mysql_error());
+	mysql_error();
+	$err = mysql_errno();
+	echo $err;
 	mysql_close($link);
-	echo $pre_code;
+	
 ?>
+	

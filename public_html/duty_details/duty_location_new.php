@@ -120,13 +120,11 @@
 					{
 						parent.document.getElementById(loc_code).textContent = values[1];
 						parent.document.getElementById(loc_description).textContent = values[2];
-						parent.document.getElementById("pop").style.display="none";
-						parent.document.getElementById("myform").style.visibility="visible";
+						popClose();
 					}
 					else
 					alert(err);
-					parent.document.getElementById("pop").style.display="none";
-					parent.document.getElementById("myform").style.visibility="visible";	
+					popClose();
 				}	
 				
 			}
@@ -134,7 +132,8 @@
 			function popClose()
 			{
 				parent.document.getElementById("pop").style.display="none";
-				parent.document.getElementById("myform").style.visibility="visible";	
+				parent.document.getElementById("myform").style.visibility="visible";
+				parent.document.getElementById("header").style.visibility="visible";
 			}
 		</script>
 	</body>

@@ -1,6 +1,6 @@
 <?php 
 	$this_page='cisf_details';
-include '../../includes/check.php';
+	include '../../includes/check.php';
 
 	include_once  '../../includes/open_db.php';
 	$result=mysql_query("select * from duty_point") or die(mysql_error());
@@ -23,8 +23,7 @@ include '../../includes/check.php';
 			function validateForm()
 			{
 				var x=document.getElementById("dp_list");
-				var y=document.getElementById("desig_list");
-				if ((x.selectedIndex==-1)||(y.selectedIndex==-1))
+				if ((x.selectedIndex==-1))
 				{
 					alert("Feilds marked * are mandatory");
 					return false;
@@ -35,11 +34,11 @@ include '../../includes/check.php';
 
     <body>
         <div>
-            <?php include_once 'menu.php';?>
+            <?php include_once '../../includes/menu.php';?>
 			<br/><br/><br/><br/>
         </div>
         <div id="form1" >
-            <form id='myform' name='myform'  action="cisf_guards_per_location_search_result.php" method='post' onsubmit="return validateForm()" accept-charset='UTF-8'>
+            <form id='myform' name='myform'  action="../cisf_guards_per_location_search_result/" method='post' onsubmit="return validateForm()" accept-charset='UTF-8'>
                 <fieldset>
                     <legend>
                         <strong>Guards Per Location [Search]</strong>
@@ -68,12 +67,12 @@ include '../../includes/check.php';
 									</td>
 								</tr>
                                 <tr>
-                                    <td><label for='desig_list'>*Designation</label></td>
+                                    <td><label for='desig_list'>Designation</label></td>
 									<td><input type='text' name='desig_list' id='desig_list' maxlength="50" style="margin-left:2em; width:17em;" /></td>
 								</tr>
                                 <tr>
                                     <td colspan="2">
-									<a href="cisf_guards_per_location_new.php"><img class="s_button" src='../../img/add.png' alt='Add' width=30 height=25 />
+									<a href="../cisf_guards_per_location_new"><img class="s_button" src='../../img/add.png' alt='Add' width=30 height=25 />
                                     <input id="Search" type='submit' name='Search' value='Search' />
                                     <input id="Clear" type='reset' name='Clear' value='Clear' />
                                     </td>

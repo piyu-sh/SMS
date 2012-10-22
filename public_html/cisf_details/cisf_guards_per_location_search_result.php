@@ -1,6 +1,6 @@
 <?php 
 	$this_page='cisf_details';
-include '../../includes/check.php';
+	include '../../includes/check.php';
 
 	if(!empty($_POST))
 	{
@@ -22,31 +22,18 @@ include '../../includes/check.php';
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
+		<link rel="stylesheet" type="text/css" href="../../styles/view.css" />
 		<title>Duty Detail</title>
 		
 		<script type="text/javascript">
 			var x="";
 			function edit(str)
 			{
-				var no_of_persons=prompt("Enter No of Persons (max 10 characters)");
-				var remark=prompt("Enter new  Remarks (max 250 characters)");
-				if(no_of_persons && remark)
-				{
-					var no_id=str+'n';
-					var remark_id=str+'s';
-					var values=str+"~^"+no_of_persons+"~^"+remark;
-					var xmlhttp=new XMLHttpRequest();
-					xmlhttp.open("GET","../../lib/edit_gaurd_per_location.php?values="+values,true);
-					xmlhttp.send();
-					xmlhttp.onreadystatechange=function()
-					{
-						var pre_code1=xmlhttp.responseText;
-						code1= pre_code1.split("~^");
-						document.getElementById(no_id).textContent=code1[0];
-						document.getElementById(remark_id).textContent=code1[1];
-					}
-				}
+				var fr=document.getElementById("pop");
+				fr.src="cisf_guards_per_location_new.phpx?id="+str;
+				fr.style.display="inline";
+				document.getElementById("myform").style.visibility="hidden";
+				document.getElementById("header").style.visibility="hidden";				
 			}
 
 			function set_check(str)
@@ -92,11 +79,12 @@ include '../../includes/check.php';
 	</head>
 
 	<body>
-		<div>
-			<?php include_once 'menu.php';?>
+		<div id="header">
+			<?php include_once '../../includes/menu.php';?>
 			<br /> <br /> <br /> <br />
-		</div>
-		<div id="form1" style="width:60em;" >
+		</div id="header">
+		<div id="form1" >
+			<iframe id="pop" src="about:blank" name="pop" scrolling="no" style="margin:0em 30em auto; width:42em; height:30em;"></iframe>
 			<form id='myform' name='myform'  action="#" method='post' accept-charset='UTF-8'>
 				<fieldset>
 					<legend>
@@ -113,7 +101,7 @@ include '../../includes/check.php';
 									<th width="400">Designation</th>
 									<th width="400">No of Persons</th>
 									<th width="400">Remarks</th>
-									<th width="30"><a href="cisf_guards_per_location_new.php"> <img class="s_button" height=30 width=30 src='../../img/add.png' alt='Add' /> </a></th>
+									<th width="30"><a href="../cisf_guards_per_location_new"> <img class="s_button" height=30 width=30 src='../../img/add.png' alt='Add' /> </a></th>
 								</tr>
 								<?php 
 									$i=0;

@@ -1,28 +1,38 @@
 <?php 
 	$this_page='duty_details';
-include '../../includes/check.php';
+	include '../../includes/check.php';
 
 	include_once  '../../includes/open_db.php';
-	$result=mysql_query("select * from duty_location") or die(mysql_error());
+	$result1=mysql_query("select * from duty_location") or die(mysql_error());
 
 	if(!empty($_POST))
 	{
-		$area_description=$_POST['area_list'];
-		$result=mysql_query("SELECT * FROM `duty_area` WHERE `area_description` = '$area_description'") or die(mysql_error());
-		while ($row = mysql_fetch_array($result))
-		{
-			$dp_code1=$row['area_code1'];
-			$dp_code2=$row['area_code2'];
-		}
-		$radio1=$_POST['radio1'];
-		$radio2=$_POST['radio2'];
-		$radio3=$_POST['radio3'];
-		$dp_code3=$_POST['dp_code2'];
+		$dp_code1=$_POST['dp_code1'];
+		$dp_code2=$_POST['dp_code2'];
+		$dp_code3=$_POST['dp_code3'];
 		$dp_description=$_POST['dp_description'];
 		$no_shifts=$_POST['no_of_shifts'];
 		$shifts=$_POST['shifts'];
 		$dp_remarks=$_POST['dp_remarks'];
-		mysql_query("insert into `duty_point`(`dp_code1`,`dp_code2`,`dp_code3`,`dp_radio`,`dp_description`,`no_shifts`,`shifts`,`dp_remarks`) values('$dp_code1','$dp_code2','$dp_code3','$radio1-$radio2-$radio3','$dp_description','$no_shifts','$shifts','$dp_remarks')") or die(mysql_error());
+		$pre_id=trim($_POST["getid"]);
+		if(empty($pre_id))
+		{
+		mysql_query("insert into `duty_point`(`dp_code1`,`dp_code2`,`dp_code3`,`dp_description`,`no_shifts`,`shifts`,`dp_remarks`) values('$dp_code1','$dp_code2','$dp_code3','$dp_description','$no_shifts','$shifts','$dp_remarks')") or die(mysql_error());
+		}
+	}
+	
+	if(@!empty($_GET))
+	{
+		$dp_id = $_GET["id"];
+		$query="select * from duty_point where `dp_id`='$dp_id' ";
+		$result=mysql_query($query) or die("query failed <br/>".mysql_error());
+		$row=mysql_fetch_array($result);
+		$loc_code=$row['dp_code1'];
+		$area_code=$row['dp_code2'];
+		$result2=mysql_query("select * from duty_location where `loc_code`='$loc_code' ")or die("query failed <br/>".mysql_error());
+		$row2=mysql_fetch_array($result2);
+		$result3=mysql_query("select * from duty_area where `area_code2`='$area_code' and `area_code1`='$loc_code' ")or die("query failed <br/>".mysql_error());
+		$row3=mysql_fetch_array($result3);
 	}
 	
 	mysql_close($link);
@@ -48,20 +58,7 @@ include '../../includes/check.php';
 		<script type="text/javascript">
 			function validateForm()
 			{
-				var a=document.getElementById("dp_code2");
-				var b=document.getElementById("dp_description");
-				var c=document.getElementById("no_of_shifts");
-				var d=document.getElementById("shifts");
-				if ((a.value==null || a.value=="")||(b.value==null || b.value==""))
-				{
-					alert("Feilds marked * are mandatory");
-					return false;
-				}
-				if ((c.value==null || c.value=="")||(d.value==null || d.value==""))
-				{
-					alert("Feilds marked * are mandatory");
-					return false;
-				}
+				
 			}
 			
 			function get_area_description(str)
@@ -81,22 +78,25 @@ include '../../includes/check.php';
 				xmlhttp.send();
 				xmlhttp.onreadystatechange=function()
 				{
-					document.getElementById("dp_code").value=xmlhttp.responseText;
+					var code = xmlhttp.responseText;
+					var values = code.split("~^");
+					document.getElementById("dp_code1").value= values[0];
+					document.getElementById("dp_code2").value= values[1];
 				}
 			}
 		</script>
 
 		</head>
-		<body>
-			<div>
+		<body onload="document.forms[0].dp_code3.focus();">
+			<div id="header" <?php echo @empty($_GET)?"":'style="display:none;"'; ?>>
 				<?php include_once '../../includes/menu.php';?>
 				<br /> <br /> <br /> <br />
 			</div>
-			<div id="form1"  >
-				<form id='myform' name='myform'  action="../duty_point_new" onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
+			<div id="form1" <?php echo @empty($_GET)?"":'style="text-align:left;"'; ?> >
+				<form id='myform' name='myform'  action=<?php echo (@empty($_GET))?"#":"duty_point_new.phpx"; ?> onsubmit="return saveClose()" method='post' accept-charset='UTF-8'>
 					<fieldset>
 						<legend >
-							<strong>Duty Point [New]</strong>
+							<strong>Duty Point <?php echo (@empty($_GET))?'[New]':'[Edit]'; ?></strong>
 						</legend>
 						<div id="tbl" >
 							<table>
@@ -107,14 +107,20 @@ include '../../includes/check.php';
 										<th></th>
 									</tr>
 									<tr>
-										<td><label for='loc_list'>*Duty Location</label></td>
+										<td><label for='loc_list'>*Duty Location</label>
+											<input type="hidden" id="getid" name="getid" value="" />
+										</td>
 										<td colspan="2">
 											<select id="loc_list" name="loc_list" onfocus="get_area_description(this.value)" onchange="get_area_description(this.value)">
 											<?php 
-												$i=0;
-												while ($row = mysql_fetch_array($result))
+												if(!@empty($_GET))
 												{
-													echo "<option id='".$i."' >".$row['loc_description']."</option>";
+													echo "<option id='".$i."' >".$row2['loc_description']."</option>";
+												}
+												$i=0;
+												while ($row1 = mysql_fetch_array($result1))
+												{
+													echo "<option id='".$i."' >".$row1['loc_description']."</option>";
 													$i++;
 												}
 											?>
@@ -124,70 +130,45 @@ include '../../includes/check.php';
 									<tr>
 										<td><label for='area_list'>*Duty Area</label></td>
 										<td  colspan="2">
-											<select id="area_list" name='area_list' onfocus="get_area_code(this.value)" onchange="get_area_code(this.value)" ></select>
-										</td>
-									</tr>
-									<tr>
-										<td></td>
-										<td>
-											<input type='radio' name='radio1' id="radio1" value="Critical" checked="checked"/>
-											<label for='radio1' style="float:left;">Critical</label>
-										</td>
-										<td>
-											<input type='radio' name='radio1' id="radio2" value="Non Critical"  />
-											<label for='radio2' style="float:left;">Non Critical</label>
-										</td>
-									</tr>
-									<tr>
-										<td></td>
-										<td>
-											<input type='radio' name='radio2' id="radio3" value="Male" checked="checked" />
-											<label for='radio3' style="float:left;">Male</label>
-										</td>
-										<td>
-											<input type='radio' name='radio2' id="radio4" value="Female"/>
-											<label for='radio4'style="float:left;">Female</label>
-										</td>
-									</tr>
-									<tr>
-										<td></td>
-										<td>
-											<input type='radio' name='radio3' id="radio5" value="Armed" checked="checked" />
-											<label for='radio5' style="float:left;">Armed</label>
-										</td>
-										<td>
-											<input type='radio' name='radio3' id="radio6" value="Un Armed"/>
-											<label for='radio6' style="float:left;">Un Armed</label>
+											<select id="area_list" name='area_list' onfocus="get_area_code(this.value)" onchange="get_area_code(this.value)" >
+											<?php 
+												if(!@empty($_GET))
+												{
+													echo "<option id='".$i."' >".$row3['area_description']."</option>";
+												}
+											?>
+											</select>
 										</td>
 									</tr>
 									<tr>
 										<td><label for='dp_code2'>*DP Code</label></td>
 										<td colspan="2">
-											<input type='text' readonly name='dp_code' id="dp_code" maxlength="10" style="float:Left; margin-left:2em; width:7em;"/>
-											<input type='text' name='dp_code2' id="dp_code2" maxlength="10" style="float:Left; margin-left:1em; width:7em;"/>
+											<input type='text' readonly name='dp_code1' id="dp_code1" maxlength="10" style="float:Left; margin-left:2em; width:3.5em;" value="<?php echo (@empty($_GET))?"":"$row[dp_code1]"; ?>"/>
+											<input type='text' readonly name='dp_code2' id="dp_code2" maxlength="10" style="float:Left; width:3.5em;" value="<?php echo (@empty($_GET))?"":"$row[dp_code2]"; ?>"/>
+											<input type='text' name='dp_code3' id="dp_code3" maxlength="10" style="float:Left; margin-left:1em; width:7em;" value="<?php echo (@empty($_GET))?"":"$row[dp_code3]"; ?>" />
 										</td>
 									</tr>
 									<tr>
 										<td><label for='dp_description'>*Description</label></td>
-										<td colspan="2"><input type='text' name='dp_description' id='dp_description' maxlength="50" style="float:Left; margin-left:2em; width:20em;"/></td>
+										<td colspan="2"><input type='text' name='dp_description' id='dp_description' maxlength="50" style="float:Left; margin-left:2em; width:20em;" value="<?php echo (@empty($_GET))?"":"$row[dp_description]"; ?>" /></td>
 									</tr>
 									<tr>
 										<td><label for='no_of_shifts'>*No of shifts</label></td>
-										<td colspan="2"><input type='text' name='no_of_shifts' id='no_of_shifts' maxlength="5" style="float:Left; margin-left:2em; width:12em;" /></td>
+										<td colspan="2"><input type='text' name='no_of_shifts' id='no_of_shifts' maxlength="5" style="float:Left; margin-left:2em; width:12em;" value="<?php echo (@empty($_GET))?"":"$row[no_shifts]"; ?>"/></td>
 									</tr>
 									<tr>
 										<td><label for='shifts'>*Shifts</label></td>
-										<td colspan="2"><input type='text' name='shifts' id='shifts' maxlength="10" style="float:Left; margin-left:2em; width:12em;" /></td>
+										<td colspan="2"><input type='text' name='shifts' id='shifts' maxlength="10" style="float:Left; margin-left:2em; width:12em;" value="<?php echo (@empty($_GET))?"":"$row[shifts]"; ?>" /></td>
 									</tr>
 									<tr>
 										<td><label for='dp_remarks'>Remarks</label></td>
-										<td colspan="2"><textarea rows='3' cols='26' name="dp_remarks" id="dp_remarks" style="resize:none; margin-left:2em; width:20em;" ></textarea></td>
+										<td colspan="2"><textarea rows='3' cols='26' name="dp_remarks" id="dp_remarks" style="resize:none; margin-left:2em; width:20em;" ><?php echo (@empty($_GET))?"":"$row[dp_remarks]"; ?></textarea></td>
 									</tr>
 									<tr>
 										<td colspan="3">
-											<a href="../duty_point_search"><img src="../../img/search.png" class="s_button" width=30 height=30/> </a> 
+											<a href=<?php echo (@empty($_GET))?"../../duty_details/duty_point_search":""; ?>><img class="s_button" src=<?php echo (@empty($_GET))?"../../img/search.png":"" ?> alt="Search" width="30" height="30" /> </a>
 											<input id="Save" type='submit' name='Save' value='Save' /> 
-											<input id="Clear" type='reset' name='Clear' value='Clear' />
+											<input type=<?php echo (@empty($_GET))?"reset":"button";?> name='Clear' value=<?php echo (@empty($_GET))?"Clear":"Close";?> onClick=<?php echo (@empty($_GET))?"":"popClose()";?> />
 										</td>
 									</tr>
 								</tbody>
@@ -202,5 +183,65 @@ include '../../includes/check.php';
 				}
 				?>
 			</div>
+		<script type="text/javascript">
+			document.getElementById("getid").value="<?php echo @empty($_GET)?"":$_GET['id']; ?>";
+			function saveClose()
+			{
+				var a=document.getElementById("dp_code3");
+				var b=document.getElementById("dp_description");
+				var c=document.getElementById("no_of_shifts");
+				var d=document.getElementById("shifts");
+				if ((a.value==null || a.value=="")||(b.value==null || b.value==""))
+				{
+					alert("Feilds marked * are mandatory");
+					return false;
+				}
+				if ((c.value==null || c.value=="")||(d.value==null || d.value==""))
+				{
+					alert("Feilds marked * are mandatory");
+					return false;
+				}
+				
+				if(document.getElementById("getid").value)
+				{
+					var dp_id=document.getElementById("getid").value;
+					var dp_code=dp_id+'c';
+					var dp_description=dp_id+'d';
+					var no_shifts=dp_id+'n';
+					var shifts=dp_id+'s';
+					var form1 = document.getElementById("myform");
+					var values = new Array();
+					for (var i=0;i<10;i++)
+					{
+						values[i] = form1.elements[i+1].value;
+						var parameters = parameters+"&values"+i+"="+values[i];
+					}
+					var xmlhttp=new XMLHttpRequest();
+					xmlhttp.open("POST", "../../lib/edit_duty_point.php", false);
+					xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					xmlhttp.send(parameters);
+					var err = xmlhttp.responseText;
+					if(err==0)
+					{
+						parent.document.getElementById(dp_code).textContent = values[3]+"-"+values[4]+"-"+values[5];
+						parent.document.getElementById(dp_description).textContent = values[6];
+						parent.document.getElementById(no_shifts).textContent = values[7];
+						parent.document.getElementById(shifts).textContent = values[8];
+						popClose();
+					}
+					else
+					alert(err);
+					popClose();
+				}	
+				
+			}
+		
+			function popClose()
+			{
+				parent.document.getElementById("pop").style.display="none";
+				parent.document.getElementById("myform").style.visibility="visible";	
+				parent.document.getElementById("header").style.visibility="visible";	
+			}
+		</script>
 	</body>
 </html>
