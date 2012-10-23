@@ -1,0 +1,66 @@
+#form1
+{
+    width: 55em;
+    height: auto;
+    margin:auto;
+}
+
+form 
+{
+    border-radius: 1em;
+    border: 0px;
+    box-shadow: 0 0 10px 0px #0078ff;
+}
+
+table 
+{
+    width: 100%;
+}
+
+fieldset 
+{
+    width: auto;
+	font-size: larger;
+    background: url(gradient1.png) repeat-x 0 -290px;
+    border-radius: 1em;
+    border: 0px;
+}
+
+legend 
+{
+	
+	font-size: 1.3em;
+    padding: 5px;
+    margin-left: 4.3em;
+    color: #7d7d7d;
+}
+
+label 
+{
+ 
+    margin-left:auto ;
+    float: right;
+}
+
+textarea
+{
+    resize: none;
+}
+
+input[type=image] 
+{
+	float:left;
+	width:1.8em;
+	height: 2em;
+	margin-left:0em;
+	border-radius:1em;
+}
+
+input[type=reset], input[type=submit]
+{
+    width: 6em;
+    height: 2.3em;
+    float: right;
+	background:#D1D1D1;
+	border-radius:1em;
+}
