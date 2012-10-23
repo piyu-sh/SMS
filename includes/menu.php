@@ -211,133 +211,6 @@
             </li>
         </ul>
     </li>
-    <li <?php echo ($this_page=='entry_permits') ? 'class="current"' : '' ; ?> >
-        <a href="#">Entry Permits</a>
-        <ul>
-            <li>
-                <a href="#">Entry Permit Types</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Entry Pass Charges</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Entry Pass Categories</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#">Entry Pass Sub-Categories</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Agency-wise Pass Categories</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Permanent PIC Holders</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Temporary PIC Holders</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Paper Pass Holder</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Vehicle Permit Holder</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Commercial Pass Holder</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Police Verifications</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">View</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
     <li <?php echo ($this_page=='ground_control_units') ? 'class="current"' : '' ; ?> >
         <a href="#">Ground Control Units</a>
         <ul>
@@ -345,7 +218,7 @@
                 <a href="#">Token Types</a>
                 <ul>
                     <li>
-                        <a href="#">New</a>
+                        <a href="../../ground_control_units/token_type_new">New</a>
                     </li>
                     <li>
                         <a href="#">View</a>
