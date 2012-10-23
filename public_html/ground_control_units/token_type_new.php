@@ -6,27 +6,26 @@
 
 	if(!empty($_POST))
 	{
-		$area_code1=$_POST['area_code1'];
-		$area_code2=$_POST['area_code2'];
-		$area_description=$_POST['area_description'];
-		$area_remarks=$_POST['area_remarks'];
+		$token_type_code=$_POST['token_type_code'];
+		$description=$_POST['description'];
+		$access_area=$_POST['access_area'];
+		$actual_quantity=$_POST['actual_quantity'];
+		$avail_quantity=$_POST['avail_quantity'];
+		$remarks=$_POST['remarks'];
 		$pre_id=trim($_POST["getid"]);
 		if(empty($pre_id))
 		{
-		mysql_query("insert into `duty_area`(`area_code1`,`area_code2`,`area_description`,`area_remarks`) values('$area_code1','$area_code2','$area_description','$area_remarks')") or die(mysql_error());
+		mysql_query("insert into `token_type`(`token_type_code`,`description`,`access_area`,`actual_quantity`,`avail_quantity`,`remarks`) values('$token_type_code','$description','$access_area','$actual_quantity','$avail_quantity','$remarks')") or die(mysql_error());
 		}
 		mysql_close($link);
 	}
 	
 	if(@!empty($_GET))
 	{
-		$area_id = $_GET["id"];
-		$query="select * from duty_area where `area_id`='$area_id' ";
+		$token_id = $_GET["id"];
+		$query="select * from token_type where `token_id`='$token_id' ";
 		$result=mysql_query($query) or die("query failed <br/>".mysql_error());
 		$row=mysql_fetch_array($result);
-		$loc_code=$row['area_code1'];
-		$result2=mysql_query("select * from duty_location where `loc_code`='$loc_code' ")or die("query failed <br/>".mysql_error());
-		$row2=mysql_fetch_array($result2);
 	}
 
 ?>
@@ -39,6 +38,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="../../styles/style.css" />
         <title>Token Type</title>
+		<style type="text/css">
+			input[type=text] {float:Left;	margin-left:2em; width:10em;}
+		</style>
     </head>
 
     <body onload="document.forms[0].token_type_code.focus();">
@@ -54,7 +56,7 @@
                     </legend>
 
                     <div id="tbl">
-                        <table border="1">
+                        <table >
                             <tbody>
                                 <tr>
                                     <th></th>
@@ -67,27 +69,27 @@
 										<label for='token _type Code'>*Token Type Code</label>
 										<input type="hidden" id="getid" name="getid" value="" />
 									</td>
-                                    <td ><input type='text' id='token_type_code' name='token_type_code' maxlength="30"  value="<?php echo (@empty($_GET))?"":"$row[area_code2]"; ?>" /></td>
+                                    <td ><input type='text' id='token_type_code' name='token_type_code' maxlength="30"  value="<?php echo (@empty($_GET))?"":"$row[token_type_code]"; ?>" /></td>
                                    	<td><label for='description'>*Description</label></td>
-									<td ><input type='text' id='description' name='description' maxlength="30"  value="<?php echo (@empty($_GET))?"":"$row[area_code2]"; ?>" /></td>
+									<td ><input type='text' id='description' name='description' maxlength="30"  value="<?php echo (@empty($_GET))?"":"$row[description]"; ?>" /></td>
                                 </tr>
 								<tr>
                                     <td><label for='access_area'>*Access Area</label></td>
-                                    <td ><input type='text' id='access_area' name='access_area' maxlength="30"  value="<?php echo (@empty($_GET))?"":"$row[area_code2]"; ?>" /></td>
+                                    <td ><input type='text' id='access_area' name='access_area' maxlength="30"  value="<?php echo (@empty($_GET))?"":"$row[access_area]"; ?>" /></td>
                                     <td><label for='actual_quantity'>*Actual Quantity</label></td>
-									<td ><input type='text' id='actual_quantity' name='actual_quantity' maxlength="3" value="<?php echo (@empty($_GET))?"":"$row[area_code2]"; ?>" /></td>
+									<td ><input type='text' id='actual_quantity' name='actual_quantity' maxlength="3" value="<?php echo (@empty($_GET))?"":"$row[actual_quantity]"; ?>" /></td>
                                 </tr>
 								<tr>
                                     <td><label for='avail_quantity'>*Avail Quantity</label></td>
-                                    <td ><input type='text' id='avail_quantity' name='avail_quantity' maxlength="3"  value="<?php echo (@empty($_GET))?"":"$row[area_code2]"; ?>" /></td>
+                                    <td ><input type='text' id='avail_quantity' name='avail_quantity' maxlength="3"  value="<?php echo (@empty($_GET))?"":"$row[avail_quantity]"; ?>" /></td>
 								</tr>
 								<tr>
                                     <td><label for='remarks'> Remarks</label></td>
-                                    <td colspan="3"> <textarea rows='2' cols='26' name='remarks' id='remarks' style="margin-left:2em; width:28em resize:none; overflow-y:auto;" ><?php echo (@empty($_GET))?"":"$row[area_code2]"; ?></textarea></td>
+                                    <td colspan="3"> <textarea rows='2' cols='26' name='remarks' id='remarks' style="margin-left:2em; width:35em; resize:none; overflow-y:auto;" ><?php echo (@empty($_GET))?"":"$row[remarks]"; ?></textarea></td>
                                 </tr>
                                 <tr>
                                     <td colspan="4">
-									<a href=<?php echo (@empty($_GET))?"../../duty_details/duty_area_search":""; ?>><img class="s_button" src=<?php echo (@empty($_GET))?"../../img/search.png":"" ?> alt="Search" width="30" height="30" /> </a> 
+									<a href=<?php echo (@empty($_GET))?"../../ground_control_units/token_type_search":""; ?>><img class="s_button" src=<?php echo (@empty($_GET))?"../../img/search.png":"" ?> alt="Search" width="30" height="30" /> </a> 
 									<input id="Save" type='submit' name='Save' value='Save' /> 
 									<input type=<?php echo (@empty($_GET))?"reset":"button";?> name='Clear' value=<?php echo (@empty($_GET))?"Clear":"Close";?> onClick=<?php echo (@empty($_GET))?"":"popClose()";?> />
                                     </td>
@@ -128,11 +130,11 @@
 				if(document.getElementById("getid").value)
 				{
 					var token_id=document.getElementById("getid").value;
-					var token_type_code=token_id+'t';
+					var token_type_code=token_id+'c';
 					var description=token_id+'d';
 					var access_area=token_id+'aa';
-					var actual_quantity=token_id+'aa';
-					var avail_quantity=token_id+'aa';
+					var actual_quantity=token_id+'aq';
+					var avail_quantity=token_id+'avq';
 					var form1 = document.getElementById("myform");
 					var values = new Array();
 					for (var i=0;i<7;i++)

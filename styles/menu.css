@@ -9,13 +9,10 @@ body {
 a {
     color: #333;
 }
-#menu
-{
-	margin:auto;
-}
+
 
 #nav {
-    margin-bottom: 2em;
+    margin:0 10em 2em 10em;
     padding: 0.5em 0.5em 0;
     background: #7d7d7d url(../img/gradient.png) repeat-x 0 -250px;
     line-height: 100%;
@@ -26,7 +23,7 @@ a {
     -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);
 }
 #nav li {
-    margin: 0 0 0 6px;
+    margin: 0 0 0 19px;
     padding: 0 0 8px;
     float: left;
     position: relative;

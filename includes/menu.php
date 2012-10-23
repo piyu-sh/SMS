@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
     <head>
-        <meta http-equiv="Content-Type" content="text/html" charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="../../styles/menu.css" />
         <title>menu</title>
         <link rel="shortcut icon" type="image/icon" href="../../img/part1.gif" />
@@ -148,69 +148,7 @@
             </li>
         </ul>
     </li>
-    <li <?php echo ($this_page=='security_committee') ? 'class="current"' : '' ; ?> >
-        <a href="#">Security Committee</a>
-        <ul>
-            <li>
-                <a href="#">Nature Of Meeting</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">AAI Committee Members</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Ex Committee Members</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Committee Members Address</a>
-            </li>
-            <li>
-                <a href="#">Meeting Details</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">View</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Facilitation And Security</a>
-                <ul>
-                    <li>
-                        <a href="#">New</a>
-                    </li>
-                    <li>
-                        <a href="#">View</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
+   
     <li <?php echo ($this_page=='ground_control_units') ? 'class="current"' : '' ; ?> >
         <a href="#">Ground Control Units</a>
         <ul>
@@ -221,7 +159,7 @@
                         <a href="../../ground_control_units/token_type_new">New</a>
                     </li>
                     <li>
-                        <a href="#">View</a>
+                        <a href="../../ground_control_units/token_type_search">Search</a>
                     </li>
                 </ul>
             </li>
@@ -240,10 +178,10 @@
                 <a href="#">Visitor Pass Register</a>
                 <ul>
                     <li>
-                        <a href="#">New</a>
+                        <a href="../../ground_control_units/visitors_pass_reg_new">New</a>
                     </li>
                     <li>
-                        <a href="#">Search</a>
+                        <a href="../../ground_control_units/visitors_pass_reg_search">Search</a>
                     </li>
                 </ul>
             </li>
@@ -251,10 +189,10 @@
                 <a href="#">Vehicle Movement Register</a>
                 <ul>
                     <li>
-                        <a href="#">New</a>
+                        <a href="../../ground_control_units/vehicle_mov_reg_new">New</a>
                     </li>
                     <li>
-                        <a href="#">View</a>
+                        <a href="../../ground_control_units/vehicle_mov_reg_search">Search</a>
                     </li>
                 </ul>
             </li>
